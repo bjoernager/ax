@@ -6,6 +6,8 @@
 
 #include <agbx/priv.h>
 
+#include <agbx/gfx.h>
+
 void agbx_done(agbx_err const _err) {
 	if (_err == agbx_err_ok) {
 		__asm__ (

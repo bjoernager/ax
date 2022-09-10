@@ -1,0 +1,11 @@
+# 1.0
+
+* Add changelog;
+* Add readme;
+* Add new header 'key';
+* Fix header guard in bs;
+* Add functions for checking keys;
+
+# 0.0
+
+* Initial;

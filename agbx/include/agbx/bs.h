@@ -4,12 +4,13 @@
 	If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
 */
 
-#if !defined(__agbx_hdr_base)
-#define __agbx_hdr_base
+#if !defined(__agbx_hdr_bs)
+#define __agbx_hdr_bs
 
 /* C23 compatibility: */
 #define constexpr static const
 #define nullptr ((void *)0x0u)
+#define typeof __typeof__
 
 typedef unsigned short     agbx_i10;
 typedef unsigned int       agbx_i20;
@@ -22,6 +23,7 @@ typedef enum {
 	agbx_err_ok,
 	agbx_err_pos2big,
 	agbx_err_px2big,
+	agbx_err_max     = 0xFFu,
 } agbx_err;
 
 constexpr agbx_i40 agbx_ver = 0x0u;

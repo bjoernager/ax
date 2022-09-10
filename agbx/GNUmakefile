@@ -52,6 +52,7 @@ OBJS := \
 	source/bs/set.o \
 	source/gfx/plot.o \
 	source/gfx/setpx.o \
+	source/key/getkeymap.o \
 	source/priv/init.o
 
 LIB := libagbx.a

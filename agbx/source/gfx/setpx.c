@@ -6,6 +6,8 @@
 
 #include <agbx/priv.h>
 
+#include <agbx/gfx.h>
+
 void agbx_setpx1(agbx_i10 const _px,agbx_i8 const  _col) {
 #if defined(__agbx_dbg)
 	agbx_i10 const dispcnt = agbx_get10(0x4000000u);

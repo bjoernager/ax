@@ -7,7 +7,7 @@
 #if !defined(__agbx_hdr_priv)
 #define __agbx_hdr_priv
 
-#include <agbx/gfx.h>
+#include <agbx/bs.h>
 
 #define __agbx_set10(_addr,_val) { \
 	__asm__ ( \

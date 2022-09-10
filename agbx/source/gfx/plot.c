@@ -6,6 +6,8 @@
 
 #include <agbx/priv.h>
 
+#include <agbx/gfx.h>
+
 agbx_i10 agbx_plot3(agbx_i8 const _x,agbx_i8 const _y,agbx_i10 const _col) {
 #if defined(__agbx_dbg)
 	if (_x >= 0xF0u || _y >= 0xA0u) {agbx_done(agbx_err_pos2big);}
