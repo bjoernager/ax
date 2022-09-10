@@ -1,3 +1,8 @@
+# 1.1
+
+* Fix version number not being updated;
+* Update error screen;
+
 # 1.0
 
 * Add changelog;
