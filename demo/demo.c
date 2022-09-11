@@ -6,6 +6,12 @@ agbx_err agbx_main(void) {
 	agbx_set10(0x500'0002u,0x19u);
 	agbx_set10(0x500'0004u,0xFFFFu);
 	agbx_set10(0x400'0000u,0x404u);
+	agbx_i10 const cols[] = {
+		0b11111u,
+		0b1111100000u,
+		0b111110000000000u,
+	};
+	agbx_i8 col = 0x0u;
 	struct {
 		agbx_i8 x;
 		agbx_i8 y;
@@ -24,6 +30,13 @@ agbx_err agbx_main(void) {
 			agbx_flip();
 			agbx_plot4(pos.x,pos.y,0x2u);
 			while (agbx_chkkey(agbx_getkeymap(),agbx_key_l)) {}
+			continue;
+		}
+		if (agbx_chkkey(keymap,agbx_key_r)) {
+			if (col == 0x2u) {col = 0x0u;}
+			else             {++col;}
+			agbx_set10(0x500'0002u,cols[col]);
+			while (agbx_chkkey(agbx_getkeymap(),agbx_key_r)) {}
 			continue;
 		}
 		typeof (pos) const prevpos = pos;
