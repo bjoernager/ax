@@ -9,11 +9,13 @@
 
 #include <agbx/bs.h>
 
-void agbx_setpx1(agbx_i10 px,agbx_i8  col);
-void agbx_setpx2(agbx_i10 px,agbx_i10 col);
+agbx_i20 agbx_flip(void);
 
-agbx_i10 agbx_plot3(agbx_i8 x, agbx_i8 y,agbx_i10 col);
-agbx_i10 agbx_plot4(agbx_i8 x, agbx_i8 y,agbx_i8  col);
-agbx_i10 agbx_plot5(agbx_i8 x, agbx_i8 y,agbx_i10 col);
+void agbx_setpx1(agbx_i20 vaddr,agbx_i10 px,agbx_i8  col);
+void agbx_setpx2(agbx_i20 vaddr,agbx_i10 px,agbx_i10 col);
+
+agbx_i10 agbx_plot3(agbx_i8 x,agbx_i8 y,agbx_i10 col);
+agbx_i10 agbx_plot4(agbx_i8 x,agbx_i8 y,agbx_i8  col);
+agbx_i10 agbx_plot5(agbx_i8 x,agbx_i8 y,agbx_i10 col);
 
 #endif

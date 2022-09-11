@@ -1,3 +1,13 @@
+# 2.0
+
+* Update readme;
+* Remove the root makefile;
+* Use digit seperators;
+* Fix setpx1;
+* Add function for flipping pages;
+* Add nodiscard to the get functions;
+* Make setpx take the address of the video page;
+
 # 1.1
 
 * Fix version number not being updated;

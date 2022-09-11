@@ -26,13 +26,13 @@ typedef enum {
 	agbx_err_max     = 0xFFu,
 } agbx_err;
 
-constexpr agbx_i40 agbx_ver = 0x1u;
+constexpr agbx_i40 agbx_ver = 0x2u;
 
 [[noreturn]] void agbx_done(agbx_err err);
 
-agbx_i10 agbx_get10(agbx_i20 addr);
-agbx_i20 agbx_get20(agbx_i20 addr);
-agbx_i8  agbx_get8( agbx_i20 addr);
+[[nodiscard]] agbx_i10 agbx_get10(agbx_i20 addr);
+[[nodiscard]] agbx_i20 agbx_get20(agbx_i20 addr);
+[[nodiscard]] agbx_i8  agbx_get8( agbx_i20 addr);
 
 void agbx_set10(agbx_i20 addr,agbx_i10 val);
 void agbx_set20(agbx_i20 addr,agbx_i20 val);

@@ -8,19 +8,24 @@
 
 #include <agbx/gfx.h>
 
-void agbx_setpx1(agbx_i10 const _px,agbx_i8 const  _col) {
+void agbx_setpx1(agbx_i20 const _vaddr,agbx_i10 const _px,agbx_i8 const _col) {
 #if defined(__agbx_dbg)
-	agbx_i10 const dispcnt = agbx_get10(0x4000000u);
+	agbx_i10 const dispcnt = agbx_get10(0x400'0000u);
 	agbx_i8 const  md      = dispcnt & 0x7u;
-	if (md == 0x3u || md == 0x5u) {agbx_done(agbx_err_badmd);}
-	if (_px >= 0x9600u)           {agbx_done(agbx_err_px2big);}
+	if (md != 0x4u)     {agbx_done(agbx_err_badmd);}
+	if (_px >= 0x9600u) {agbx_done(agbx_err_px2big);}
 #endif
-	__agbx_setpx1(_px,_col)
+	/* We can only write halfwords to VRAM, so we load the adjacent pixel value and combine it into a halfword. */
+	agbx_i20 const addr = _vaddr + _px - (_px & 0x1u) * 0x1u;
+	agbx_i10 col;
+	if (_px & 0x1u) {col = (agbx_i10)agbx_get8(addr) | (agbx_i10)_col << 0x8u;}
+	else            {col = (agbx_i10)agbx_get8(addr + 0x1u) << 0x8u | (agbx_i10)_col;}
+	__agbx_set10(addr,col)
 }
 
-void agbx_setpx2(agbx_i10 const _px,agbx_i10 const _col) {
+void agbx_setpx2(agbx_i20 const _vaddr,agbx_i10 const _px,agbx_i10 const _col) {
 #if defined(__agbx_dbg)
-	agbx_i10 const dispcnt = agbx_get10(0x4000000u);
+	agbx_i10 const dispcnt = agbx_get10(0x400'0000u);
 	agbx_i8 const  md      = dispcnt & 0x7u;
 	if (md == 0x4u) {agbx_done(agbx_err_badmd);}
 	if (md == 0x5u) {
@@ -31,5 +36,5 @@ void agbx_setpx2(agbx_i10 const _px,agbx_i10 const _col) {
 		if (_px >= 0x9600u) {agbx_done(agbx_err_px2big);}
 	}
 #endif
-	__agbx_setpx2(_px,_col)
+	__agbx_setpx2(_vaddr,_px,_col)
 }

@@ -6,10 +6,12 @@
 
 #include <agbx/priv.h>
 
-#include <agbx/key.h>
+#include <agbx/gfx.h>
 
-agbx_keymap agbx_getkeymap(void) {
-	agbx_keymap map;
-	map._keys = agbx_get10(0x400'0130u);
-	return map;
+agbx_i20 agbx_flip(void) {
+	agbx_i10 dispcnt = agbx_get10(0x400'0000u);
+	dispcnt ^= 0b10000u;
+	agbx_set10(0x400'0000u,dispcnt);
+	if (dispcnt & 0x10000u) {return 0x600'A000u;}
+	return 0x600'0000u;
 }

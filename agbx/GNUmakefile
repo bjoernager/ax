@@ -2,14 +2,17 @@
 # This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 # If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
+ifneq ($(DEBUG),)
 ifneq ($(DEBUG),false)
 ifneq ($(DEBUG),true)
 $(error Invalid value \"$(DEBUG)\" for DEBUG)
 endif
 endif
+endif
 
 # TOOLS
 
+AS      := arm-none-eabi-as
 CC      := clang -target arm-none-eabi
 #CC      := arm-none-eabi-gcc
 OBJCOPY := arm-none-eabi-objcopy
@@ -25,6 +28,7 @@ CFLAGS := \
 	-Wpedantic \
 	-ffreestanding \
 	-fno-builtin \
+	-fno-strict-aliasing \
 	-mcpu=arm7tdmi \
 	-mthumb \
 	-mtune=arm7tdmi \
@@ -50,6 +54,7 @@ OBJS := \
 	source/bs/done.o \
 	source/bs/get.o \
 	source/bs/set.o \
+	source/gfx/flip.o \
 	source/gfx/plot.o \
 	source/gfx/setpx.o \
 	source/key/getkeymap.o \

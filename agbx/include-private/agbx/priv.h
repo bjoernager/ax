@@ -36,13 +36,8 @@
 	); \
 }
 
-#define __agbx_setpx1(_px,_col) { \
-	agbx_i20 const addr = 0x6000000u + _px; \
-	__agbx_set8(addr,_col); \
-}
-
-#define __agbx_setpx2(_px,_col) { \
-	agbx_i20 const addr = 0x6000000u + _px * 0x2u; /* We multiply it by two as each pixel takes up two bytes. */ \
+#define __agbx_setpx2(_vaddr,_px,_col) { \
+	agbx_i20 const addr = _vaddr + _px * 0x2u; /* We multiply it by two as each pixel takes up two bytes. */ \
 	__agbx_set10(addr,_col); \
 }
 

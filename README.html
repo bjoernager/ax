@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html>
-	<h1>AGBX</h1>
+	<h1>AGBx</h1>
 	<p>Framework for development on the Game Boy Advance.</p>
+	<h2>Building</h2>
+	<p>As the Game Boy Advance uses an ARM (ARM7TDMI) processor, AGBx requires an ARM cross-compiler.</p>
+	<p>For GCC, the appropriate package is <i>arm-none-eabi-gcc</i> on Arch Linux and <i>gcc-arm-none-eabi</i> on Debian. Clang supports supports cross-compilation by default, and this platform can be set via the <i>--target=arm-none-eabi</i> option.</p>
+	<p>The used cross-compiler can be configured in the makefiles, however, it must be GCC-compatible..</p>
+	<p>Debug mode can be enabled by setting <i>DEBUG=true</i> when invoking make.</p>
+	<br />
+	<p>The provided makefiles are for GNU Make (hence the filename of <i>GNUmakefile</i>) and depend on it's extensions.</p>
+	<h3>Demo</h3>
+	<p>The demo uses <a href="https://mandelbrot.dk/agbsum">agbsum</a> (<a href="https://mandelbrot.dk/pkgbuild_agbsum">pkgbuild</a>) for patching the demo image header checksum so that it isn't rejected by the bootloader. This patch isn't always required, however, and the makefile (at <i>demo/GNUmakefile</i>) can be modified to skip it.</p>
 </html>
