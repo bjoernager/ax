@@ -15,6 +15,9 @@ OBJCOPY := arm-none-eabi-objcopy
 CFLAGS := \
 	-I../agbx/include \
 	-O3 \
+	-Wall \
+	-Wextra \
+	-Wpedantic \
 	-mcpu=arm7tdmi \
 	-nostdlib \
 	-std=c2x

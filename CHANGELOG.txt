@@ -1,3 +1,11 @@
+# 2.2
+
+* Enable warnings in demo makefile;
+* Implement flip in assembly;
+* Implement init in assembly;
+* Implement getkeymap in assembly;
+* Update get and set internally;
+
 # 2.1
 
 * Add colour switching to the demo (press R);

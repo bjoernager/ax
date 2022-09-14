@@ -20,7 +20,7 @@ void agbx_setpx1(agbx_i20 const _vaddr,agbx_i10 const _px,agbx_i8 const _col) {
 	agbx_i10 col;
 	if (_px & 0x1u) {col = (agbx_i10)agbx_get8(addr) | (agbx_i10)_col << 0x8u;}
 	else            {col = (agbx_i10)agbx_get8(addr + 0x1u) << 0x8u | (agbx_i10)_col;}
-	__agbx_set10(addr,col)
+	__agbx_set10(addr,col);
 }
 
 void agbx_setpx2(agbx_i20 const _vaddr,agbx_i10 const _px,agbx_i10 const _col) {
