@@ -1,3 +1,18 @@
+# 3.0
+
+* Add function for getting the current video bank (getvbnk);
+* Remove debug mode;
+* Update readme;
+* Make error 'ok' always zero;
+* Remove error 'misc';
+* Restructure assembly;
+* Add more error codes;
+* Add new header 'algo';
+* Add functions for copying memory sequences (cp);
+* Add function for V-syncing (vsync);
+* Add functions for filling the screen (clrscrn{X});
+* Make plot take the video address;
+
 # 2.2
 
 * Enable warnings in demo makefile;

@@ -68,7 +68,7 @@ _start: @ We define this label to stop the linker from complaining
 .byte 0x0
 
 @ Complement check (1)
-@ Checksum of the header. Use agbhdrsum to patch this in the final image.
+@ Checksum of the header. Use agbsum to patch this in the final image.
 .byte 0x0
 
 @ Reserved area (2)

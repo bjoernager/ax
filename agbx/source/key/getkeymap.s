@@ -14,8 +14,10 @@
 .thumb_func
 
 agbx_getkeymap:
+	@ Load the keys:
 	ldr r0,.addr
 	ldrh r0,[r0]
+
 	bx lr
 
 .endfunc

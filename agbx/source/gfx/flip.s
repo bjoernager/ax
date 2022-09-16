@@ -7,6 +7,8 @@
 .cpu arm7tdmi
 .thumb
 
+.extern __agbx_getvbnk
+
 .globl agbx_flip
 
 .func
@@ -14,19 +16,20 @@
 .thumb_func
 
 agbx_flip:
+	@ Get the current value of dispcnt:
 	ldr r0,.dispcntaddr
-	ldrh r1,[r0] @ Get the current value of dispcnt.
-	movs r2,#0b10000
-	eors r1,r2 @ XOR bit five.
-	strh r1,[r0] @ Save dispcnt.
-	movs r0,#0x10
-	tst r1,r0 @ Check what video bank we should return the address of.
-	beq .vbnk0
-.vbnk1:
-	ldr r0,.vbnk1addr
-	bx lr
-.vbnk0:
-	ldr r0,.vbnk0addr
+	ldrh r1,[r0]
+
+	@ XOR bit five:
+	movs r2,0b10000
+	eors r1,r2
+
+	@ Save dispcnt:
+	strh r1,[r0]
+
+	@ Get the address of the video bank:
+	b __agbx_getvbnk
+	
 	bx lr
 
 .endfunc
@@ -35,13 +38,3 @@ agbx_flip:
 
 .dispcntaddr:
 	.long 0x4000000
-
-.align
-
-.vbnk0addr:
-	.long 0x6000000
-
-.align
-
-.vbnk1addr:
-	.long 0x600A000

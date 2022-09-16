@@ -5,7 +5,7 @@
 # TOOLS
 
 AS      := arm-none-eabi-as
-CC      := clang -target arm-none-eabi
+CC      := clang --target=arm-none-eabi
 #CC      := arm-none-eabi-gcc
 LD      := arm-none-eabi-ld
 OBJCOPY := arm-none-eabi-objcopy
@@ -29,13 +29,13 @@ OBJS := \
 
 ROMHDR := hdr.o
 
-BIN := demo.gba
+IMG := demo.gba
 
 # TARGETS
 
 .PHONY: clean purge
 
-$(BIN): $(ROMHDR) $(OBJS)
+$(IMG): $(ROMHDR) $(OBJS)
 	$(LD) -L../agbx -Tldscript -odemo.elf -znoexecstack $(^) -lagbx
 	$(OBJCOPY) -Obinary demo.elf $(@)
 	agbsum -psi$(@)
@@ -44,5 +44,5 @@ clean:
 	$(RM) $(OBJS) $(ROMHDR) demo.elf
 
 purge: clean
-	$(RM) $(BIN)
+	$(RM) $(IMG)
 

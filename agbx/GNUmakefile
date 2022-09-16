@@ -2,18 +2,10 @@
 # This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 # If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-ifneq ($(DEBUG),)
-ifneq ($(DEBUG),false)
-ifneq ($(DEBUG),true)
-$(error Invalid value \"$(DEBUG)\" for DEBUG)
-endif
-endif
-endif
-
 # TOOLS
 
 AS      := arm-none-eabi-as
-CC      := clang -target arm-none-eabi
+CC      := clang --target=arm-none-eabi
 #CC      := arm-none-eabi-gcc
 OBJCOPY := arm-none-eabi-objcopy
 
@@ -35,12 +27,6 @@ CFLAGS := \
 	-nostdlib \
 	--std=c2x
 
-ifeq ($(DEBUG),true)
-CFLAGS := \
-	$(CFLAGS) \
-	-D__agbx_dbg
-endif
-
 # HEADERS
 
 HDRS := \
@@ -51,12 +37,16 @@ HDRS := \
 # BINARIES
 
 OBJS := \
+	source/algo/cp.o \
 	source/bs/done.o \
 	source/bs/get.o \
 	source/bs/set.o \
+	source/gfx/clrscrn.o \
 	source/gfx/flip.o \
+	source/gfx/getvbnk.o \
 	source/gfx/plot.o \
 	source/gfx/setpx.o \
+	source/gfx/vsync.o \
 	source/key/getkeymap.o \
 	source/priv/init.o
 

@@ -18,15 +18,17 @@ typedef unsigned long long agbx_i40;
 typedef unsigned char      agbx_i8;
 
 typedef enum {
+	agbx_err_ok      = 0x0u,
+	agbx_err_badaddr,
+	agbx_err_badalgn,
+	agbx_err_badcol,
 	agbx_err_badmd,
-	agbx_err_misc,
-	agbx_err_ok,
 	agbx_err_pos2big,
 	agbx_err_px2big,
 	agbx_err_max     = 0xFFu,
 } agbx_err;
 
-constexpr agbx_i40 agbx_ver = 0x2u;
+constexpr agbx_i40 agbx_ver = 0x3u;
 
 [[noreturn]] void agbx_done(agbx_err err);
 
