@@ -35,7 +35,7 @@ __agbx_getvbnk: @ Takes the value of dispcnt in r1.
 	movs r0,0b10000
 	tst r1,r0
 
-	bne .vbnk1
+	beq .vbnk1
 
 .vbnk0:
 	@ Return the address of the first video bank:

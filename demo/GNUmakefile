@@ -14,6 +14,7 @@ OBJCOPY := arm-none-eabi-objcopy
 
 CFLAGS := \
 	-I../agbx/include \
+	-Iinclude \
 	-O3 \
 	-Wall \
 	-Wextra \
@@ -25,7 +26,12 @@ CFLAGS := \
 # BINARIES
 
 OBJS := \
-	demo.o
+	source/chkkeys.o \
+	source/chgcol.o \
+	source/initdat.o \
+	source/initgfx.o \
+	source/loop.o \
+	source/main.o
 
 ROMHDR := hdr.o
 

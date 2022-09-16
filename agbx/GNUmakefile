@@ -43,8 +43,10 @@ OBJS := \
 	source/bs/set.o \
 	source/gfx/clrscrn.o \
 	source/gfx/flip.o \
+	source/gfx/getpx.o \
 	source/gfx/getvbnk.o \
 	source/gfx/plot.o \
+	source/gfx/rd.o \
 	source/gfx/setpx.o \
 	source/gfx/vsync.o \
 	source/key/getkeymap.o \

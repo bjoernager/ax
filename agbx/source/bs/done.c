@@ -18,7 +18,7 @@ void agbx_done(agbx_err const _err) {
 	/* Display the barcode-like error message: */
 	agbx_set10(0x400'0000u,0x404u);
 	agbx_set10(0x500'0000u,0x0u);
-	agbx_set10(0x500'0002u,0x19u);
+	agbx_set10(0x500'0002u,0b11111u);
 	agbx_i8 err[0xBu];
 	for (agbx_i8 pos = 0x0u;pos != 0x8u;++pos) {err[pos] = (agbx_i8)_err >> pos & 0x1u;}
 	err[0x8u] = 0x0u;

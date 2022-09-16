@@ -8,17 +8,17 @@
 
 #include <agbx/gfx.h>
 
-void agbx_plot3(agbx_i8 const _x,agbx_i8 const _y,agbx_i10 const _col) {
+agbx_i10 agbx_rd3(agbx_i8 const _x,agbx_i8 const _y) {
 	agbx_i10 const px = _y * 0xF0u + _x;
-	__agbx_setpx2(0x600'0000u,px,_col)
+	return agbx_getpx2(0x600'0000u,px);
 }
 
-void agbx_plot4(agbx_i20 const _vaddr,agbx_i8 const _x,agbx_i8 const _y,agbx_i8 const _col) {
+agbx_i8 agbx_rd4(agbx_i20 const _vaddr,agbx_i8 const _x,agbx_i8 const _y) {
 	agbx_i10 const px = _y * 0xF0u + _x;
-	agbx_setpx1(_vaddr,px,_col);
+	return agbx_getpx1(_vaddr,px);
 }
 
-void agbx_plot5(agbx_i20 const _vaddr,agbx_i8 const _x,agbx_i8 const _y,agbx_i10 const _col) {
+agbx_i10 agbx_rd5(agbx_i20 const _vaddr,agbx_i8 const _x,agbx_i8 const _y) {
 	agbx_i10 const px = _y * 0xA0u + _x;
-	__agbx_setpx2(_vaddr,px,_col)
+	return agbx_getpx2(_vaddr,px);
 }

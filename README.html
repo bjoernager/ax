@@ -2,6 +2,37 @@
 <html>
 	<h1>AGBx</h1>
 	<p>Framework for development on the Game Boy Advance.</p>
+	<br />
+	<p>Controls for the demo:</p>
+	<ul>
+		<li>
+			<p>A: Colour the current pixel;</p>
+		</li>
+		<li>
+			<p>+CONTROL PAD (UP): Move one pixel up on the canvas;</p>
+		</li>
+		<li>
+			<p>+CONTROL PAD (RIGHT): Move one pixel to the right on the canvas;</p>
+		</li>
+		<li>
+			<p>+CONTROL PAD (DOWN): Move one pixel down on the canvas;</p>
+		</li>
+		<li>
+			<p>+CONTROL PAD (LEFT): Move one pixel to the left on the canvas;</p>
+		</li>
+		<li>
+			<p>R: Rotate the palette counterclockwise;</p>
+		</li>
+		<li>
+			<p>L: Rotate the palette clockwise;</p>
+		</li>
+		<li>
+			<p>START: Exit the demo;</p>
+		</li>
+		<li>
+			<p>SELECT: Exit the demo (whilst indicating error);</p>
+		</li>
+	</ul>
 	<h2>Building</h2>
 	<p>As the Game Boy Advance uses an ARM (ARM7TDMI) processor, AGBx requires an ARM cross-compiler.</p>
 	<p>For GCC, the appropriate package is <i>arm-none-eabi-gcc</i> on Arch Linux and <i>gcc-arm-none-eabi</i> on Debian. Clang supports supports cross-compilation by default, and this platform can be set via the <i>--target=arm-none-eabi</i> option.</p>

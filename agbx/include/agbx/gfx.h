@@ -16,12 +16,19 @@ void     agbx_vsync(  void);
 void agbx_setpx1(agbx_i20 vaddr,agbx_i10 px,agbx_i8  col);
 void agbx_setpx2(agbx_i20 vaddr,agbx_i10 px,agbx_i10 col);
 
+agbx_i8  agbx_getpx1(agbx_i20 vaddr,agbx_i10 px);
+agbx_i10 agbx_getpx2(agbx_i20 vaddr,agbx_i10 px);
+
 void agbx_clrscrn3(agbx_i10 col);
 void agbx_clrscrn4(agbx_i20 vaddr,agbx_i8  col);
 void agbx_clrscrn5(agbx_i20 vaddr,agbx_i10 col);
 
-agbx_i10 agbx_plot3(agbx_i8 x,agbx_i8 y,agbx_i10 col);
-agbx_i10 agbx_plot4(agbx_i20 vaddr,agbx_i8 x,agbx_i8 y,agbx_i8  col);
-agbx_i10 agbx_plot5(agbx_i20 vaddr,agbx_i8 x,agbx_i8 y,agbx_i10 col);
+void agbx_plot3(agbx_i8  x,    agbx_i8 y,agbx_i10 col);
+void agbx_plot4(agbx_i20 vaddr,agbx_i8 x,agbx_i8  y,  agbx_i8  col);
+void agbx_plot5(agbx_i20 vaddr,agbx_i8 x,agbx_i8  y,  agbx_i10 col);
+
+agbx_i10 agbx_rd3(agbx_i8  x,    agbx_i8 y);
+agbx_i8  agbx_rd4(agbx_i20 vaddr,agbx_i8 x,agbx_i8 y);
+agbx_i10 agbx_rd5(agbx_i20 vaddr,agbx_i8 x,agbx_i8 y);
 
 #endif

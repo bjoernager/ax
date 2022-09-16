@@ -1,3 +1,13 @@
+# 4.0
+
+* Restructure demo;
+* Make flip and getvbnk return the address of the other bank;
+* Add functions for getting the value of a pixel (getpx);
+* Add functions for reading a colour value (rd);
+* Remove return value from plot;
+* Update readme;
+* Fix plot5;
+
 # 3.0
 
 * Add function for getting the current video bank (getvbnk);
