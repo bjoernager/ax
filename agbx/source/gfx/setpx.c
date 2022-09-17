@@ -9,7 +9,7 @@
 #include <agbx/gfx.h>
 
 void agbx_setpx1(agbx_i20 const _vaddr,agbx_i10 const _px,agbx_i8 const _col) {
-	/* We can only write halfwords to VRAM, so we load the adjacent pixel value and combine it into a halfword. */
+	/* We can only write halfwords to VRAM, so we need to load the adjacent pixel value and combine it into a halfword. */
 	agbx_i20 const addr = _vaddr + _px - (_px & 0x1u) * 0x1u;
 	agbx_i10 col;
 	if (_px & 0x1u) {col = (agbx_i10)agbx_get8(addr) | (agbx_i10)_col << 0x8u;}
