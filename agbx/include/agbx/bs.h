@@ -28,7 +28,7 @@ typedef enum {
 	agbx_err_max     = 0xFFu,
 } agbx_err;
 
-constexpr agbx_i40 agbx_ver = 0x3u;
+constexpr agbx_i40 agbx_ver = 0x4u;
 
 [[noreturn]] void agbx_done(agbx_err err);
 

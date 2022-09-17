@@ -1,3 +1,7 @@
+# 4.3
+
+* Fix incorrect value for ver;
+
 # 4.2
 
 * Update readme;
