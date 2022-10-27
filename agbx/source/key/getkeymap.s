@@ -7,15 +7,15 @@
 .cpu arm7tdmi
 .thumb
 
-.globl agbx_getkeymap
+.globl ax_getkeymap
 
 .func
 .thumb_func
 
-agbx_getkeymap:
+ax_getkeymap:
 	@ Load the keys:
-	ldr r0,.addr @ agbx_i20 addr = 0x4000130u;
-	ldrh r0,[r0] @ agbx_keymap keymap = *(agbx_i10 *)addr;
+	ldr r0,.addr @ ax_i20 addr = 0x4000130u;
+	ldrh r0,[r0] @ ax_keymap keymap = *(ax_i10 *)addr;
 
 	bx lr        @ return keymap;
 

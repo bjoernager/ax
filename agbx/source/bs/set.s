@@ -7,15 +7,15 @@
 .cpu arm7tdmi
 .thumb
 
-.globl agbx_set10
-.globl agbx_set20
-.globl agbx_set8
+.globl ax_set10
+.globl ax_set20
+.globl ax_set8
 
 .func
 .thumb_func
 
-agbx_set10:
-	strh r1,[r0] @ *(agbx_i10 *)addr = val;
+ax_set10:
+	strh r1,[r0] @ *(ax_i10 *)addr = val;
 	bx lr        @ return;
 
 .endfunc
@@ -23,8 +23,8 @@ agbx_set10:
 .func
 .thumb_func
 
-agbx_set20:
-	str r1,[r0] @ *(agbx_i20 *)addr = val;
+ax_set20:
+	str r1,[r0] @ *(ax_i20 *)addr = val;
 	bx lr       @ return;
 
 .endfunc
@@ -32,8 +32,8 @@ agbx_set20:
 .func
 .thumb_func
 
-agbx_set8:
-	strb r1,[r0] @ *(agbx_i8 *)addr = val;
+ax_set8:
+	strb r1,[r0] @ *(ax_i8 *)addr = val;
 	bx lr        @ return;
 
 .endfunc

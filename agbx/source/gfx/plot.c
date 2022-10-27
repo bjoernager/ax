@@ -4,21 +4,21 @@
 	If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
 */
 
-#include <agbx/priv.h>
+#include <ax/priv.h>
 
-#include <agbx/gfx.h>
+#include <ax/gfx.h>
 
-void agbx_plot3(agbx_i8 const _x,agbx_i8 const _y,agbx_i10 const _col) {
-	agbx_i10 const px = _y * 0xF0u + _x;
-	__agbx_setpx2(0x600'0000u,px,_col)
+void ax_plot3(ax_i8 const _x,ax_i8 const _y,ax_i10 const _col) {
+	ax_i10 const px = _y * 0xF0u + _x;
+	__ax_setpx2(0x600'0000u,px,_col)
 }
 
-void agbx_plot4(agbx_i20 const _vaddr,agbx_i8 const _x,agbx_i8 const _y,agbx_i8 const _col) {
-	agbx_i10 const px = _y * 0xF0u + _x;
-	agbx_setpx1(_vaddr,px,_col);
+void ax_plot4(ax_i20 const _vaddr,ax_i8 const _x,ax_i8 const _y,ax_i8 const _col) {
+	ax_i10 const px = _y * 0xF0u + _x;
+	ax_setpx1(_vaddr,px,_col);
 }
 
-void agbx_plot5(agbx_i20 const _vaddr,agbx_i8 const _x,agbx_i8 const _y,agbx_i10 const _col) {
-	agbx_i10 const px = _y * 0xA0u + _x;
-	__agbx_setpx2(_vaddr,px,_col)
+void ax_plot5(ax_i20 const _vaddr,ax_i8 const _x,ax_i8 const _y,ax_i10 const _col) {
+	ax_i10 const px = _y * 0xA0u + _x;
+	__ax_setpx2(_vaddr,px,_col)
 }

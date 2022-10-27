@@ -7,15 +7,15 @@
 .cpu arm7tdmi
 .thumb
 
-.globl agbx_get10
-.globl agbx_get20
-.globl agbx_get8
+.globl ax_get10
+.globl ax_get20
+.globl ax_get8
 
 .func
 .thumb_func
 
-agbx_get10:
-	ldrh r0,[r0] @ agbx_i10 val = *(agbx_i10 *)addr;
+ax_get10:
+	ldrh r0,[r0] @ ax_i10 val = *(ax_i10 *)addr;
 	bx lr        @ return val;
 
 .endfunc
@@ -23,8 +23,8 @@ agbx_get10:
 .func
 .thumb_func
 
-agbx_get20:
-	ldr r0,[r0] @ agbx_i20 val = *(agbx_i20 *)addr;
+ax_get20:
+	ldr r0,[r0] @ ax_i20 val = *(ax_i20 *)addr;
 	bx lr       @ return val;
 
 .endfunc
@@ -32,8 +32,8 @@ agbx_get20:
 .func
 .thumb_func
 
-agbx_get8:
-	ldrb r0,[r0] @ agbx_i8 val = *(agbx_i8 *)addr;
+ax_get8:
+	ldrb r0,[r0] @ ax_i8 val = *(ax_i8 *)addr;
 	bx lr        @ return val;
 
 .endfunc

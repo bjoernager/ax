@@ -1,64 +1,64 @@
 #include <agbx-demo.h>
 
-#include <agbx/key.h>
-#include <agbx/gfx.h>
+#include <ax/key.h>
+#include <ax/gfx.h>
 
-#define agbxd_chk(_key) \
+#define axd_chk(_key) \
 	curkey = _key; \
-	if (agbx_chkkey(keymap,_key))
+	if (ax_chkkey(keymap,_key))
 
-#define agbxd_wait() \
-	while (agbx_chkkey(agbx_getkeymap(),curkey)) {}
+#define axd_wait() \
+	while (ax_chkkey(ax_getkeymap(),curkey)) {}
 
-agbxd_upd agbxd_chkkeys(agbxd_dat * _dat) {
-	agbxd_upd upd = {};
-	agbx_keymap const keymap = agbx_getkeymap();
-	agbx_key          curkey;
-	agbxd_chk(agbx_key_sel) {
+axd_upd axd_chkkeys(axd_dat * _dat) {
+	axd_upd upd = {};
+	ax_keymap const keymap = ax_getkeymap();
+	ax_key          curkey;
+	axd_chk(ax_key_sel) {
 		upd.done = true;
 		upd.err  = true;
 		return upd;
 	}
-	agbxd_chk(agbx_key_start) {
+	axd_chk(ax_key_start) {
 		upd.done = true;
 		return upd;
 	}
-	agbxd_chk(agbx_key_l) {
-		agbxd_chgcol(_dat,0x0u);
-		agbxd_wait();
+	axd_chk(ax_key_l) {
+		axd_chgcol(_dat,0x0u);
+		axd_wait()
 	}
-	agbxd_chk(agbx_key_r) {
-		agbxd_chgcol(_dat,0x1u);
-		agbxd_wait();
+	axd_chk(ax_key_r) {
+		axd_chgcol(_dat,0x1u);
+		axd_wait()
 	}
-	agbxd_chk(agbx_key_pade) {
+	axd_chk(ax_key_pade) {
 		if (_dat->pos.x != 0xEFu) {
 			upd.mv = true;
 			++_dat->pos.x;
-			agbxd_wait();
+			axd_wait()
 		}
 	}
-	agbxd_chk(agbx_key_padn) {
+	axd_chk(ax_key_padn) {
 		if (_dat->pos.y != 0x0u) {
 			upd.mv = true;
 			--_dat->pos.y;
-			agbxd_wait();
+			axd_wait()
 		}
 	}
-	agbxd_chk(agbx_key_pads) {
+	axd_chk(ax_key_pads) {
 		if (_dat->pos.y != 0x9Fu) {
 			upd.mv = true;
 			++_dat->pos.y;
-			agbxd_wait();
+			axd_wait()
 		}
 	}
-	agbxd_chk(agbx_key_padw) {
+	axd_chk(ax_key_padw) {
 		if (_dat->pos.x != 0x0u) {
 			upd.mv = true;
 			--_dat->pos.x;
-			agbxd_wait();
+			axd_wait()
 		}
 	}
-	agbxd_chk(agbx_key_a) {upd.drw = true;}
+	axd_chk(ax_key_a) {upd.drw = true;}
 	return upd;
 }

@@ -7,19 +7,19 @@
 .cpu arm7tdmi
 .thumb
 
-.extern agbx_done
-.extern agbx_main
+.extern ax_done
+.extern ax_main
 
-.globl __agbx_init
+.globl __ax_init
 
 .func
 .thumb_func
 
-__agbx_init:
+__ax_init:
 	@ Call main:
-	bl agbx_main
+	bl ax_main
 
 	@ Call done:
-	bl agbx_done @ The return value is already in r0, so there's no need to move it.
+	bl ax_done @ The return value is already in r0, so there's no need to move it.
 
 .endfunc

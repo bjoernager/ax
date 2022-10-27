@@ -1,15 +1,15 @@
-.extern __agbx_init
+.extern __ax_init
 
 @ AGB IMAGE HEADER
 @ ... through the courtesy of <https://problemkaputt.de/gbatek-gba-cartridge-header.htm>.
 @ Please read this thoroughly, as to make sure to cater it to your own program.
 
 @ Image entry point (4)
-@ 32-bit ARM instruction that serves as the entry point of the image, which usually is a branch instruction. Must be "b __agbx_init" if agbx is used.
+@ 32-bit ARM instruction that serves as the entry point of the image, which usually is a branch instruction. Must be "b __ax_init" if agbx is used.
 .ARM
 .global _start
 _start: @ We define this label to stop the linker from complaining
-	b __agbx_init
+	b __ax_init
 
 @ Nintendo logo (156)
 @ Must be equal to the following memory sequence. The bootloader locks up if it determines that this is not the case.

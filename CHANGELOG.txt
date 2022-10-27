@@ -1,3 +1,8 @@
+# 6.0
+
+* Use prefix ax instead of agbx (including header folders);
+* Fix version constant;
+
 # 5.0
 
 * Add structure for circles;

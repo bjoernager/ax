@@ -30,9 +30,9 @@ CFLAGS := \
 # HEADERS
 
 HDRS := \
-	include/agbx/bs.h \
-	include/agbx/gfx.h \
-	include-private/agbx/priv.h
+	include/ax/bs.h \
+	include/ax/gfx.h \
+	include-private/ax/priv.h
 
 # BINARIES
 

@@ -4,11 +4,11 @@
 	If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
 */
 
-#if !defined(__agbx_hdr_algo)
-#define __agbx_hdr_algo
+#if !defined(__ax_hdr_algo)
+#define __ax_hdr_algo
 
-#include <agbx/bs.h>
+#include <ax/bs.h>
 
-void agbx_cp(void const * src,agbx_i20 num,void * dest);
+void ax_cp(void const * src,ax_i20 num,void * dest);
 
 #endif

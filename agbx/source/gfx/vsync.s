@@ -7,19 +7,19 @@
 .cpu arm7tdmi
 .thumb
 
-.globl agbx_vsync
+.globl ax_vsync
 
 .func
 .thumb_func
 
-agbx_vsync:
+ax_vsync:
 	@ Set the constants:
-	ldr r0,.vcountaddr @ agbx_i20 vcountaddr = 0x4000006u;
-	movs r1,0xA0       @ agbx_i20 numhline = 0xA0;
+	ldr r0,.vcountaddr @ ax_i20 vcountaddr = 0x4000006u;
+	movs r1,0xA0       @ ax_i20 numhline = 0xA0;
 	
 .loop:
 	@ Check the scanline counter:
-	ldrh r2,[r0]       @ agbx_i20 vcount = *(agbx_i10 *)vcountaddr;
+	ldrh r2,[r0]       @ ax_i20 vcount = *(ax_i10 *)vcountaddr;
 	cmp r2,r1
 	beq .ret           @ if (vcount == numhline) {goto ret;}
 

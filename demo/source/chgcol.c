@@ -1,10 +1,10 @@
 #include <agbx-demo.h>
 
-#include <agbx/gfx.h>
+#include <ax/gfx.h>
 
-void agbxd_chgcol(agbxd_dat * _dat,agbx_i8 const _dir) {
-	constexpr agbx_i8 maxcol = 0x7u;
-	agbx_i8 col = _dat->col;
+void axd_chgcol(axd_dat * _dat,ax_i8 const _dir) {
+	constexpr ax_i8 maxcol = 0x7u;
+	ax_i8 col = _dat->col;
 	if (!_dir) {
 		if (!col) {col = maxcol;}
 		else      {--col;}

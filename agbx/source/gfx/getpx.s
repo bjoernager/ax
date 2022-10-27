@@ -7,13 +7,13 @@
 .cpu arm7tdmi
 .thumb
 
-.globl agbx_getpx1
-.globl agbx_getpx2
+.globl ax_getpx1
+.globl ax_getpx2
 
 .func
 .thumb_func
 
-agbx_getpx1:
+ax_getpx1:
 	adds r0,r1 @ Get the address of the pixel by adding the offset to the video address.
 	ldrh r0,[r0]
 	bx lr
@@ -23,7 +23,7 @@ agbx_getpx1:
 .func
 .thumb_func
 
-agbx_getpx2:
+ax_getpx2:
 	adds r0,r1 @ Get the address of the pixel by adding the offset to the video address.
 	adds r0,r1 @ Add the offset twice as each pixel takes up two bytes.
 	ldrh r0,[r0]

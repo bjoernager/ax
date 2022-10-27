@@ -1,33 +1,33 @@
-#if !defined(agbxd_hdr)
-#define agbxd_hdr
+#if !defined(axd_hdr)
+#define axd_hdr
 
-#include <agbx/bs.h>
-
-typedef struct {
-	agbx_i8 x;
-	agbx_i8 y;
-} agbxd_pos;
+#include <ax/bs.h>
 
 typedef struct {
-	agbx_i8   col;
-	agbxd_pos pos;
-	agbx_i8   prevcol;
-	agbxd_pos prevpos;
-	agbx_i20  vaddr;
-} agbxd_dat;
+	ax_i8 x;
+	ax_i8 y;
+} axd_pos;
+
+typedef struct {
+	ax_i8   col;
+	axd_pos pos;
+	ax_i8   prevcol;
+	axd_pos prevpos;
+	ax_i20  vaddr;
+} axd_dat;
 
 typedef struct {
 	bool done;
 	bool err;
 	bool drw;
 	bool mv;
-} agbxd_upd;
+} axd_upd;
 
-agbxd_upd agbxd_chkkeys(agbxd_dat * dat);
-void      agbxd_chgcol( agbxd_dat * dat,agbx_i8 dir);
-void      agbxd_drw(    agbxd_dat * dat);
-void      agbxd_initdat(agbxd_dat * dat);
-void      agbxd_initgfx(void);
-bool      agbxd_loop(   agbxd_dat * dat);
+axd_upd axd_chkkeys(axd_dat * dat);
+void      axd_chgcol( axd_dat * dat,ax_i8 dir);
+void      axd_drw(    axd_dat * dat);
+void      axd_initdat(axd_dat * dat);
+void      axd_initgfx(void);
+bool      axd_loop(   axd_dat * dat);
 
 #endif
