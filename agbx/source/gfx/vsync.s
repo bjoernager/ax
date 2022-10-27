@@ -10,29 +10,28 @@
 .globl agbx_vsync
 
 .func
-
 .thumb_func
 
 agbx_vsync:
 	@ Set the constants:
-	ldr r0,.scancnt @ Address of the scanline counter register.
-	movs r1,0xA0 @ Number of horizontal lines;
+	ldr r0,.vcountaddr @ agbx_i20 vcountaddr = 0x4000006u;
+	movs r1,0xA0       @ agbx_i20 numhline = 0xA0;
 	
 .loop:
 	@ Check the scanline counter:
-	ldr r2,[r0] @ Load the counter.
-	cmp r2,r1 @ Check if it has reached the bottom.
-	beq .ret @ Return if so.
+	ldrh r2,[r0]       @ agbx_i20 vcount = *(agbx_i10 *)vcountaddr;
+	cmp r2,r1
+	beq .ret           @ if (vcount == numhline) {goto ret;}
+
+	b .loop            @ goto loop;
 
 .ret:
 	@ Return:
-	bx lr
+	bx lr              @ return;
 
 .endfunc
 
 .align
 
-.scancnt:
-	.long 0x4000000
-
-.align
+.vcountaddr:
+	.long 0x4000006

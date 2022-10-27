@@ -25,7 +25,7 @@ CFLAGS := \
 	-mthumb \
 	-mtune=arm7tdmi \
 	-nostdlib \
-	--std=c2x
+	-std=c2x
 
 # HEADERS
 

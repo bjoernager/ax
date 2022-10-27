@@ -11,7 +11,6 @@
 .globl agbx_getpx2
 
 .func
-
 .thumb_func
 
 agbx_getpx1:
@@ -22,7 +21,6 @@ agbx_getpx1:
 .endfunc
 
 .func
-
 .thumb_func
 
 agbx_getpx2:

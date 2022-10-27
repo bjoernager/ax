@@ -11,30 +11,27 @@
 .globl agbx_getvbnk
 
 .func
-
 .thumb_func
 
 agbx_getvbnk:
 	@ Get the current value of dispcnt:
-	ldr r0,.dispcntaddr
-	ldrh r1,[r0]
+	ldr r0,.dispcntaddr @ agbx_i20 dispcntaddr = 0x4000000u;
+	ldrh r1,[r0]        @ agbx_i10 dispcnt = *(agbx_i10 *)dispcntaddr;
 
 	@ Get the address:
-	b __agbx_getvbnk
+	b __agbx_getvbnk    @ agbx_i20 vaddr = __agbx_getvbnk();
 	
-	bx lr
+	bx lr               @ return vaddr;
 
 .endfunc
 
 .func
-
 .thumb_func
 
 __agbx_getvbnk: @ Takes the value of dispcnt in r1.
 	@ Check if the fifth bit is set:
 	movs r0,0b10000
 	tst r1,r0
-
 	beq .vbnk1
 
 .vbnk0:

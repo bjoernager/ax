@@ -1,3 +1,13 @@
+# 5.0
+
+* Add structure for circles;
+* Reimplement setpx1;
+* Add better assembly comments;
+* Fix incorrect address for vcount in vsync;
+* Fix incorrect size of vcount in vsync;
+* Fix non-looping loop in vsync;
+* Remove nullptr macro (Clang supports it now);
+
 # 4.3
 
 * Fix incorrect value for ver;

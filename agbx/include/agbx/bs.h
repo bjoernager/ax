@@ -9,7 +9,6 @@
 
 /* C23 compatibility: */
 #define constexpr static const
-#define nullptr ((void *)0x0u)
 #define typeof __typeof__
 
 typedef unsigned short     agbx_i10;

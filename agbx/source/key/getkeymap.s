@@ -10,15 +10,14 @@
 .globl agbx_getkeymap
 
 .func
-
 .thumb_func
 
 agbx_getkeymap:
 	@ Load the keys:
-	ldr r0,.addr
-	ldrh r0,[r0]
+	ldr r0,.addr @ agbx_i20 addr = 0x4000130u;
+	ldrh r0,[r0] @ agbx_keymap keymap = *(agbx_i10 *)addr;
 
-	bx lr
+	bx lr        @ return keymap;
 
 .endfunc
 

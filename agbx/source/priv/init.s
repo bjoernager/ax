@@ -13,7 +13,6 @@
 .globl __agbx_init
 
 .func
-
 .thumb_func
 
 __agbx_init:

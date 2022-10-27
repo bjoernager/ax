@@ -12,31 +12,28 @@
 .globl agbx_set8
 
 .func
-
 .thumb_func
 
 agbx_set10:
-	strh r1,[r0]
-	bx lr
+	strh r1,[r0] @ *(agbx_i10 *)addr = val;
+	bx lr        @ return;
 
 .endfunc
 
 .func
-
 .thumb_func
 
 agbx_set20:
-	str r1,[r0]
-	bx lr
+	str r1,[r0] @ *(agbx_i20 *)addr = val;
+	bx lr       @ return;
 
 .endfunc
 
 .func
-
 .thumb_func
 
 agbx_set8:
-	strb r1,[r0]
-	bx lr
+	strb r1,[r0] @ *(agbx_i8 *)addr = val;
+	bx lr        @ return;
 
 .endfunc
