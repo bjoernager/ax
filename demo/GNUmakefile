@@ -1,6 +1,6 @@
 # Copyright 2022 Gabriel Jensen.
 # This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-# If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+# If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0>.
 
 # TOOLS
 
@@ -12,28 +12,36 @@ OBJCOPY := arm-none-eabi-objcopy
 
 # TOOL FLAGS
 
-CFLAGS := \
+CFLAGS :=             \
 	-I../agbx/include \
-	-Iinclude \
-	-O3 \
-	-Wall \
-	-Wextra \
-	-Wpedantic \
-	-mcpu=arm7tdmi \
-	-nostdlib \
+	-Iinclude         \
+	-O3               \
+	-Wall             \
+	-Wextra           \
+	-Wpedantic        \
+	-fshort-enums     \
+	-mcpu=arm7tdmi    \
+	-nostdlib         \
 	-std=c2x
+
+LDFLAGS :=      \
+	-L../agbx   \
+	-Tscript.ld
 
 # BINARIES
 
-OBJS := \
+OBJS :=              \
 	source/chkkeys.o \
-	source/chgcol.o \
+	source/chgcol.o  \
 	source/initdat.o \
 	source/initgfx.o \
-	source/loop.o \
+	source/loop.o    \
 	source/main.o
 
 ROMHDR := hdr.o
+
+LDLIBS :=  \
+	-lagbx
 
 IMG := demo.gba
 
@@ -42,7 +50,7 @@ IMG := demo.gba
 .PHONY: clean purge
 
 $(IMG): $(ROMHDR) $(OBJS)
-	$(LD) -L../agbx -Tldscript -odemo.elf -znoexecstack $(^) -lagbx
+	$(LD) $(LDFLAGS) -odemo.elf -znoexecstack $(^) $(LDLIBS)
 	$(OBJCOPY) -Obinary demo.elf $(@)
 	agbsum -psi$(@)
 

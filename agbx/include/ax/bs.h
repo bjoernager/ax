@@ -1,7 +1,7 @@
 /*
 	Copyright 2022 Gabriel Jensen.
 	This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-	If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+	If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0>.
 */
 
 #if !defined(__ax_hdr_bs)
@@ -9,11 +9,10 @@
 
 /* C23 compatibility: */
 #define constexpr static const
-#define typeof __typeof__
 
-typedef unsigned short     ax_i10;
-typedef unsigned int       ax_i20;
-typedef unsigned long long ax_i40;
+typedef unsigned short     ax_i01;
+typedef unsigned int       ax_i02;
+typedef unsigned long long ax_i04;
 typedef unsigned char      ax_i8;
 
 typedef enum {
@@ -27,16 +26,16 @@ typedef enum {
 	ax_err_max     = 0xFFu,
 } ax_err;
 
-constexpr ax_i40 ax_ver = 0x6u;
+constexpr ax_i04 ax_ver = 0x7u;
 
 [[noreturn]] void ax_done(ax_err err);
 
-[[nodiscard]] ax_i10 ax_get10(ax_i20 addr);
-[[nodiscard]] ax_i20 ax_get20(ax_i20 addr);
-[[nodiscard]] ax_i8  ax_get8( ax_i20 addr);
+[[nodiscard]] ax_i01 ax_get10(ax_i02 addr);
+[[nodiscard]] ax_i02 ax_get20(ax_i02 addr);
+[[nodiscard]] ax_i8  ax_get8( ax_i02 addr);
 
-void ax_set10(ax_i20 addr,ax_i10 val);
-void ax_set20(ax_i20 addr,ax_i20 val);
-void ax_set8( ax_i20 addr,ax_i8  val);
+void ax_set10(ax_i02 addr,ax_i01 val);
+void ax_set20(ax_i02 addr,ax_i02 val);
+void ax_set8( ax_i02 addr,ax_i8  val);
 
 #endif

@@ -1,7 +1,7 @@
 /*
 	Copyright 2022 Gabriel Jensen.
 	This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-	If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+	If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0>.
 */
 
 #if !defined(__ax_hdr_key)
@@ -23,10 +23,10 @@ typedef enum {
 } ax_key;
 
 typedef struct {
-	ax_i10 _keys;
+	ax_i01 _keys;
 } ax_keymap;
 
-#define ax_chkkey(_map,_key) (!(bool)(_map._keys >> (ax_i10)_key & 0x1u))
+#define ax_chkkey(_map,_key) (!(bool)(_map._keys >> (ax_i01)_key & 0x1u))
 
 ax_keymap ax_getkeymap(void);
 

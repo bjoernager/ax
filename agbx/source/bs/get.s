@@ -1,6 +1,6 @@
 @ Copyright 2022 Gabriel Jensen.
 @ This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-@ If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+@ If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0>.
 
 .syntax unified
 
@@ -15,7 +15,7 @@
 .thumb_func
 
 ax_get10:
-	ldrh r0,[r0] @ ax_i10 val = *(ax_i10 *)addr;
+	ldrh r0,[r0] @ ax_i01 val = *(ax_i01 *)addr;
 	bx lr        @ return val;
 
 .endfunc
@@ -24,7 +24,7 @@ ax_get10:
 .thumb_func
 
 ax_get20:
-	ldr r0,[r0] @ ax_i20 val = *(ax_i20 *)addr;
+	ldr r0,[r0] @ ax_i02 val = *(ax_i02 *)addr;
 	bx lr       @ return val;
 
 .endfunc

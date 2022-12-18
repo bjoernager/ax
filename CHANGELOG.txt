@@ -1,3 +1,13 @@
+# 7.0
+
+* Remove typeof macro;
+* Update makefile styling;
+* Update linker script (place bss and data correctly, rename to 'script.ld');
+* Add function for plotting textures (plottex);
+* Use left-to-right numbers;
+* Use variably-sized enumerations;
+* Fix clrscrn;
+
 # 6.0
 
 * Use prefix ax instead of agbx (including header folders);

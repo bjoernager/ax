@@ -1,7 +1,7 @@
 /*
 	Copyright 2022 Gabriel Jensen.
 	This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-	If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+	If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0>.
 */
 
 #include <ax/priv.h>
@@ -24,7 +24,7 @@ void ax_done(ax_err const _err) {
 	err[0x8u] = 0x0u;
 	err[0x9u] = 0x1u;
 	err[0xAu] = 0x0u;
-	for (ax_i10 pos = 0x0u;pos != 0x9600u;pos += 0xF0u) {
+	for (ax_i01 pos = 0x0u;pos != 0x9600u;pos += 0xF0u) {
 		ax_setpx1(0x600'0000u,pos,       err[0x0u]);
 		ax_setpx1(0x600'0000u,pos + 0x1u,err[0x1u]);
 		ax_setpx1(0x600'0000u,pos + 0x2u,err[0x2u]);

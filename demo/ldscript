@@ -1,5 +1,0 @@
-OUTPUT_ARCH(arm)
-
-SECTIONS {
-	.text 0x8000000 : {}
-}

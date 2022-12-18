@@ -1,6 +1,6 @@
 @ Copyright 2022 Gabriel Jensen.
 @ This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-@ If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+@ If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0>.
 
 .syntax unified
 
@@ -15,11 +15,11 @@
 
 ax_getvbnk:
 	@ Get the current value of dispcnt:
-	ldr r0,.dispcntaddr @ ax_i20 dispcntaddr = 0x4000000u;
-	ldrh r1,[r0]        @ ax_i10 dispcnt = *(ax_i10 *)dispcntaddr;
+	ldr r0,.dispcntaddr @ ax_i02 dispcntaddr = 0x4000000u;
+	ldrh r1,[r0]        @ ax_i01 dispcnt = *(ax_i01 *)dispcntaddr;
 
 	@ Get the address:
-	b __ax_getvbnk    @ ax_i20 vaddr = __ax_getvbnk();
+	b __ax_getvbnk      @ ax_i02 vaddr = __ax_getvbnk();
 	
 	bx lr               @ return vaddr;
 

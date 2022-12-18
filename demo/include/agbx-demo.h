@@ -13,7 +13,7 @@ typedef struct {
 	axd_pos pos;
 	ax_i8   prevcol;
 	axd_pos prevpos;
-	ax_i20  vaddr;
+	ax_i02  vaddr;
 } axd_dat;
 
 typedef struct {
