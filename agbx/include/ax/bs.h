@@ -7,8 +7,14 @@
 #if !defined(__ax_hdr_bs)
 #define __ax_hdr_bs
 
+#if defined(__cplusplus)
+extern "C" {
+#endif
+
+#if !defined(__cplusplus)
 /* C23 compatibility: */
 #define constexpr static const
+#endif
 
 typedef unsigned short     ax_i01;
 typedef unsigned int       ax_i02;
@@ -26,7 +32,12 @@ typedef enum {
 	ax_err_max     = 0xFFu,
 } ax_err;
 
-constexpr ax_i04 ax_ver = 0x7u;
+constexpr ax_i04 ax_ver = 0x8u;
+
+constexpr ax_i8 ax_scrnw3 = 0xF0u;
+constexpr ax_i8 ax_scrnw5 = 0xA0u;
+constexpr ax_i8 ax_scrnh3 = 0xA0u;
+constexpr ax_i8 ax_scrnh5 = 0x80u;
 
 [[noreturn]] void ax_done(ax_err err);
 
@@ -37,5 +48,9 @@ constexpr ax_i04 ax_ver = 0x7u;
 void ax_set10(ax_i02 addr,ax_i01 val);
 void ax_set20(ax_i02 addr,ax_i02 val);
 void ax_set8( ax_i02 addr,ax_i8  val);
+
+#if defined(__cplusplus)
+}
+#endif
 
 #endif

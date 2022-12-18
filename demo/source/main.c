@@ -10,7 +10,7 @@ ax_err ax_main(void) {
 	bool const err = axd_loop(&dat);
 	if (err) {
 		for (ax_i01 px = 0x0u;px != 0x9600u;++px) {
-			ax_setpx1(dat.vaddr,px,dat.col);
+			ax_plot1(dat.vaddr,px,dat.col);
 			axd_chgcol(&dat,0x1u);
 		}
 		return ax_err_max;

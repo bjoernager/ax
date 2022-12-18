@@ -1,3 +1,15 @@
+# 8.0
+
+* Remove setpx and getpx;
+* Make plot, plottex, rd, and cir take pixel number instead of coordinates;
+* Add macro for converting coordinates to pixel numbers;
+* Add colour parameter to cir;
+* Add screen width parameter to plottex and cir;
+* Use pixel width instead of graphics mode for clrscrn, plottex, and cir variants;
+* Support C++;
+* Implement clrscrn and plottex in C++;
+* Remove error screen;
+
 # 7.0
 
 * Remove typeof macro;

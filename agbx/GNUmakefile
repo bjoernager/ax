@@ -5,13 +5,34 @@
 # TOOLS
 
 AS      := arm-none-eabi-as
+#CC      := arm-none-eabi-gcc -Dbool="_Bool" -Dfalse="((_Bool)+0x0u)" -Dfalse="((_Bool)+0x0u)"
 CC      := clang --target=arm-none-eabi
-#CC      := arm-none-eabi-gcc
+#CXX      := arm-none-eabi-g++ 
+CXX     := clang++ --target=arm-none-eabi
 OBJCOPY := arm-none-eabi-objcopy
 
 # TOOL FLAGS
 
-CFLAGS :=                \
+CFLAGS :=                      \
+	-Iinclude                  \
+	-Iinclude-private          \
+	-Ofast                     \
+	-Wall                      \
+	-Wextra                    \
+	-Wpedantic                 \
+	-Wno-gnu-binary-literal    \
+	-Wno-gnu-empty-initializer \
+	-ffreestanding             \
+	-fno-builtin               \
+	-fno-strict-aliasing       \
+	-fshort-enums              \
+	-mcpu=arm7tdmi             \
+	-mthumb                    \
+	-mtune=arm7tdmi            \
+	-nostdlib                  \
+	-std=c2x
+
+CXXFLAGS :=               \
 	-Iinclude            \
 	-Iinclude-private    \
 	-Ofast               \
@@ -20,13 +41,14 @@ CFLAGS :=                \
 	-Wpedantic           \
 	-ffreestanding       \
 	-fno-builtin         \
+	-fno-exceptions      \
 	-fno-strict-aliasing \
 	-fshort-enums        \
 	-mcpu=arm7tdmi       \
 	-mthumb              \
 	-mtune=arm7tdmi      \
 	-nostdlib            \
-	-std=c2x
+	-std=c++2b
 
 # HEADERS
 
@@ -46,12 +68,10 @@ OBJS :=                    \
 	source/bs/set.o        \
 	source/gfx/clrscrn.o   \
 	source/gfx/flip.o      \
-	source/gfx/getpx.o     \
 	source/gfx/getvbnk.o   \
 	source/gfx/plot.o      \
 	source/gfx/plottex.o   \
 	source/gfx/rd.o        \
-	source/gfx/setpx.o     \
 	source/gfx/vsync.o     \
 	source/key/getkeymap.o \
 	source/priv/init.o

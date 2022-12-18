@@ -12,6 +12,5 @@ void axd_initgfx(void) {
 	ax_set10(0x500'000Cu,0b111110000000000u);
 	ax_set10(0x500'000Eu,0b111110000011111u);
 	ax_set10(0x400'0000u,0x404u);
-	ax_clrscrn4(0x600'0000u,0x0u);
-	ax_clrscrn4(0x600'A000u,0x0u);
+	ax_clrscrn1(0x600'A000u,0x0u);
 }

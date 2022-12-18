@@ -9,34 +9,34 @@
 
 #include <ax/bs.h>
 
+#if defined(__cplusplus)
+extern "C" {
+#endif
+
+#define ax_coord3(_x,_y) ((ax_i01)_y * ax_scrnw3 + (ax_i01)_x)
+#define ax_coord5(_x,_y) ((ax_i01)_y * ax_scrnw5 + (ax_i01)_x)
+
 ax_i02 ax_flip(   void);
 ax_i02 ax_getvbnk(void);
 void   ax_vsync(  void);
 
-void ax_setpx1(ax_i02 vaddr,ax_i01 px,ax_i8  col);
-void ax_setpx2(ax_i02 vaddr,ax_i01 px,ax_i01 col);
+void ax_clrscrn1(ax_i02 vaddr,ax_i8  col);
+void ax_clrscrn2(ax_i02 vaddr,ax_i01 col);
 
-ax_i8  ax_getpx1(ax_i02 vaddr,ax_i01 px);
-ax_i01 ax_getpx2(ax_i02 vaddr,ax_i01 px);
+void ax_plot1(ax_i02 vaddr,ax_i01 px, ax_i8  col);
+void ax_plot2(ax_i02 vaddr,ax_i01 px, ax_i01 col);
 
-void ax_clrscrn3(ax_i01 col);
-void ax_clrscrn4(ax_i02 vaddr,ax_i8  col);
-void ax_clrscrn5(ax_i02 vaddr,ax_i01 col);
+void ax_plottex1(ax_i02 vaddr,ax_i8 scrnw,ax_i8 const *  tex,ax_i01 px,ax_i8 w,ax_i8 h);
+void ax_plottex2(ax_i02 vaddr,ax_i8 scrnw,ax_i01 const * tex,ax_i01 px,ax_i8 w,ax_i8 h);
 
-void ax_plot3(ax_i8  x,    ax_i8 y,ax_i01 col);
-void ax_plot4(ax_i02 vaddr,ax_i8 x,ax_i8  y,  ax_i8  col);
-void ax_plot5(ax_i02 vaddr,ax_i8 x,ax_i8  y,  ax_i01 col);
+ax_i8  ax_rd1(ax_i02 vaddr,ax_i01 px);
+ax_i01 ax_rd2(ax_i02 vaddr,ax_i01 px);
 
-void ax_plottex3(ax_i01 const * tex,  ax_i8          x,  ax_i8 y,ax_i8 w,ax_i8 h);
-void ax_plottex4(ax_i02         vaddr,ax_i8 const *  tex,ax_i8 x,ax_i8 y,ax_i8 w,ax_i8 h);
-void ax_plottex5(ax_i02         vaddr,ax_i01 const * tex,ax_i8 x,ax_i8 y,ax_i8 w,ax_i8 h);
+void ax_cir1(ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 r,ax_i8  col);
+void ax_cir2(ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 r,ax_i01 col);
 
-ax_i01 ax_rd3(ax_i8  x,    ax_i8 y);
-ax_i8  ax_rd4(ax_i02 vaddr,ax_i8 x,ax_i8 y);
-ax_i01 ax_rd5(ax_i02 vaddr,ax_i8 x,ax_i8 y);
-
-void ax_cir3(ax_i8  x,    ax_i8 y,ax_i8 r);
-void ax_cir4(ax_i02 vaddr,ax_i8 x,ax_i8 y,ax_i8 r);
-void ax_cir5(ax_i02 vaddr,ax_i8 x,ax_i8 y,ax_i8 r);
+#if defined(__cplusplus)
+}
+#endif
 
 #endif

@@ -8,17 +8,24 @@
 
 #include <ax/gfx.h>
 
-void ax_plot3(ax_i8 const _x,ax_i8 const _y,ax_i01 const _col) {
-	ax_i01 const px = _y * 0xF0u + _x;
-	__ax_setpx2(0x600'0000u,px,_col)
+void ax_plot1(ax_i02 const _vaddr,ax_i01 const _px,ax_i8 const _col) {
+	/* We can only write halfwords to VRAM, so we need to load the adjacent pixel value and combine it into a halfword. */
+	bool   const odd    = _px & 0x1u;
+	ax_i02       addr   = _vaddr + _px - odd;
+	ax_i01       precol = __ax_get10(addr);
+	ax_i01       col    = _col;
+	if (odd) {
+		precol &=  0b11111111u;
+		col    <<= 0x8u;
+	}
+	else {
+		precol &= 0b1111111100000000u;
+	}
+	ax_i01 const newcol = precol | col;
+	__ax_set10(addr,newcol);
 }
 
-void ax_plot4(ax_i02 const _vaddr,ax_i8 const _x,ax_i8 const _y,ax_i8 const _col) {
-	ax_i01 const px = _y * 0xF0u + _x;
-	ax_setpx1(_vaddr,px,_col);
-}
-
-void ax_plot5(ax_i02 const _vaddr,ax_i8 const _x,ax_i8 const _y,ax_i01 const _col) {
-	ax_i01 const px = _y * 0xA0u + _x;
-	__ax_setpx2(_vaddr,px,_col)
+void ax_plot2(ax_i02 const _vaddr,ax_i01 const _px,ax_i01 const _col) {
+	ax_i02 const addr = _vaddr + _px;
+	__ax_set10(addr,_col);
 }
