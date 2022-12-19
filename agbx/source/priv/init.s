@@ -8,7 +8,7 @@
 .thumb
 
 .extern ax_done
-.extern ax_main
+.extern ax_start
 
 .globl __ax_init
 
@@ -17,7 +17,7 @@
 
 __ax_init:
 	@ Call main:
-	bl ax_main
+	bl ax_start
 
 	@ Call done:
 	bl ax_done @ The return value is already in r0, so there's no need to move it.

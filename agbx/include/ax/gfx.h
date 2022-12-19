@@ -13,8 +13,14 @@
 extern "C" {
 #endif
 
-#define ax_coord3(_x,_y) ((ax_i01)_y * ax_scrnw3 + (ax_i01)_x)
-#define ax_coord5(_x,_y) ((ax_i01)_y * ax_scrnw5 + (ax_i01)_x)
+constexpr ax_i8 ax_scrnw3 = 0xF0u;
+constexpr ax_i8 ax_scrnw5 = 0xA0u;
+constexpr ax_i8 ax_scrnh3 = 0xA0u;
+constexpr ax_i8 ax_scrnh5 = 0x80u;
+
+#define ax_coord(_scrnw,_x,_y) ((ax_i01)((ax_i01)(_y) * (ax_i01)(_scrnw) + (ax_i01)(_x)))
+
+#define ax_col(_r,_g,_b) ((ax_i01)(((ax_i01)(_r) | (ax_i01)(_g) << 0x5u | (ax_i01)(_b) << 0xAu) & 0b000000111111111111111))
 
 ax_i02 ax_flip(   void);
 ax_i02 ax_getvbnk(void);

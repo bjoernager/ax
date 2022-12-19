@@ -23,11 +23,12 @@ typedef struct {
 	bool mv;
 } axd_upd;
 
-axd_upd axd_chkkeys(axd_dat * dat);
-void      axd_chgcol( axd_dat * dat,ax_i8 dir);
-void      axd_drw(    axd_dat * dat);
-void      axd_initdat(axd_dat * dat);
-void      axd_initgfx(void);
-bool      axd_loop(   axd_dat * dat);
+axd_upd axd_chkkeys(  axd_dat * dat);
+void    axd_chgcol(   axd_dat * dat,  ax_i8  dir);
+void    axd_drw(      axd_dat * dat);
+void    axd_initdat(  axd_dat * dat);
+void    axd_initgfx(  void);
+bool    axd_loop(     axd_dat * dat);
+void    axd_setcolbdr(ax_i02    vaddr,ax_i01 col);
 
 #endif

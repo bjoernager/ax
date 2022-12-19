@@ -32,28 +32,28 @@ axd_upd axd_chkkeys(axd_dat * _dat) {
 		axd_wait()
 	}
 	axd_chk(ax_key_pade) {
-		if (_dat->pos.x != 0xEFu) {
+		if (_dat->pos.x != 0xEEu) {
 			upd.mv = true;
 			++_dat->pos.x;
 			axd_wait()
 		}
 	}
 	axd_chk(ax_key_padn) {
-		if (_dat->pos.y != 0x0u) {
+		if (_dat->pos.y != 0x1u) {
 			upd.mv = true;
 			--_dat->pos.y;
 			axd_wait()
 		}
 	}
 	axd_chk(ax_key_pads) {
-		if (_dat->pos.y != 0x9Fu) {
+		if (_dat->pos.y != 0x9Eu) {
 			upd.mv = true;
 			++_dat->pos.y;
 			axd_wait()
 		}
 	}
 	axd_chk(ax_key_padw) {
-		if (_dat->pos.x != 0x0u) {
+		if (_dat->pos.x != 0x1u) {
 			upd.mv = true;
 			--_dat->pos.x;
 			axd_wait()

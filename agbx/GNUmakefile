@@ -32,7 +32,7 @@ CFLAGS :=                      \
 	-nostdlib                  \
 	-std=c2x
 
-CXXFLAGS :=               \
+CXXFLAGS :=              \
 	-Iinclude            \
 	-Iinclude-private    \
 	-Ofast               \

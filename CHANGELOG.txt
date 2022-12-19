@@ -1,3 +1,12 @@
+# 9.0
+
+* Move scrnw and scrnh to gfx;
+* Make coord take scrnw parameter;
+* Expand macro parameters inside parantheses;
+* Rename entry point to ax_start;
+* Add macro for converting RGB-values into colour values;
+* Remove algo module;
+
 # 8.0
 
 * Remove setpx and getpx;

@@ -32,12 +32,7 @@ typedef enum {
 	ax_err_max     = 0xFFu,
 } ax_err;
 
-constexpr ax_i04 ax_ver = 0x8u;
-
-constexpr ax_i8 ax_scrnw3 = 0xF0u;
-constexpr ax_i8 ax_scrnw5 = 0xA0u;
-constexpr ax_i8 ax_scrnh3 = 0xA0u;
-constexpr ax_i8 ax_scrnh5 = 0x80u;
+constexpr ax_i04 ax_ver = 0x9u;
 
 [[noreturn]] void ax_done(ax_err err);
 

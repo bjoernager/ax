@@ -26,19 +26,21 @@ CFLAGS :=                      \
 	-nostdlib                  \
 	-std=c2x
 
-LDFLAGS :=      \
-	-L../agbx   \
-	-Tscript.ld
+LDFLAGS :=        \
+	-L../agbx     \
+	-Tscript.ld   \
+	-znoexecstack
 
 # BINARIES
 
-OBJS :=              \
-	source/chkkeys.o \
-	source/chgcol.o  \
-	source/initdat.o \
-	source/initgfx.o \
-	source/loop.o    \
-	source/main.o
+OBJS :=                \
+	source/chkkeys.o   \
+	source/chgcol.o    \
+	source/initdat.o   \
+	source/initgfx.o   \
+	source/loop.o      \
+	source/setcolbdr.o \
+	source/start.o
 
 ROMHDR := hdr.o
 
@@ -52,7 +54,7 @@ IMG := demo.gba
 .PHONY: clean purge
 
 $(IMG): $(ROMHDR) $(OBJS)
-	$(LD) $(LDFLAGS) -odemo.elf -znoexecstack $(^) $(LDLIBS)
+	$(LD) $(LDFLAGS) -odemo.elf $(^) $(LDLIBS)
 	$(OBJCOPY) -Obinary demo.elf $(@)
 	agbsum -psi$(@)
 
