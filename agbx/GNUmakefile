@@ -13,7 +13,7 @@ OBJCOPY := arm-none-eabi-objcopy
 
 # TOOL FLAGS
 
-CFLAGS :=                      \
+CFLAGS := \
 	-Iinclude                  \
 	-Iinclude-private          \
 	-Ofast                     \
@@ -32,7 +32,7 @@ CFLAGS :=                      \
 	-nostdlib                  \
 	-std=c2x
 
-CXXFLAGS :=              \
+CXXFLAGS := \
 	-Iinclude            \
 	-Iinclude-private    \
 	-Ofast               \
@@ -52,8 +52,7 @@ CXXFLAGS :=              \
 
 # HEADERS
 
-HDRS :=                       \
-	include/ax/algo.h         \
+HDRS := \
 	include/ax/bs.h           \
 	include/ax/gfx.h          \
 	include/ax/key.h          \
@@ -61,8 +60,7 @@ HDRS :=                       \
 
 # BINARIES
 
-OBJS :=                    \
-	source/algo/cp.o       \
+OBJS := \
 	source/bs/done.o       \
 	source/bs/get.o        \
 	source/bs/set.o        \

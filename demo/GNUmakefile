@@ -12,7 +12,7 @@ OBJCOPY := arm-none-eabi-objcopy
 
 # TOOL FLAGS
 
-CFLAGS :=                      \
+CFLAGS := \
 	-I../agbx/include          \
 	-Iinclude                  \
 	-O3                        \
@@ -26,14 +26,14 @@ CFLAGS :=                      \
 	-nostdlib                  \
 	-std=c2x
 
-LDFLAGS :=        \
+LDFLAGS := \
 	-L../agbx     \
 	-Tscript.ld   \
 	-znoexecstack
 
 # BINARIES
 
-OBJS :=                \
+OBJS := \
 	source/chkkeys.o   \
 	source/chgcol.o    \
 	source/initdat.o   \
@@ -44,7 +44,7 @@ OBJS :=                \
 
 ROMHDR := hdr.o
 
-LDLIBS :=  \
+LDLIBS := \
 	-lagbx
 
 IMG := demo.gba

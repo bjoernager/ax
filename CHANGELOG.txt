@@ -1,3 +1,7 @@
+# 9.1
+
+* Remove algo references;
+
 # 9.0
 
 * Move scrnw and scrnh to gfx;
