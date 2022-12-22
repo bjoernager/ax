@@ -22,6 +22,7 @@ constexpr ax_i8 ax_scrnh5 = 0x80u;
 
 #define ax_col(_r,_g,_b) ((ax_i01)(((ax_i01)(_r) | (ax_i01)(_g) << 0x5u | (ax_i01)(_b) << 0xAu) & 0b000000111111111111111))
 
+void   ax_blnk(   void);
 ax_i02 ax_flip(   void);
 ax_i02 ax_getvbnk(void);
 void   ax_vsync(  void);
@@ -38,8 +39,25 @@ void ax_plottex2(ax_i02 vaddr,ax_i8 scrnw,ax_i01 const * tex,ax_i01 px,ax_i8 w,a
 ax_i8  ax_rd1(ax_i02 vaddr,ax_i01 px);
 ax_i01 ax_rd2(ax_i02 vaddr,ax_i01 px);
 
-void ax_cir1(ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 r,ax_i8  col);
-void ax_cir2(ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 r,ax_i01 col);
+void ax_setcol(ax_i8 n,ax_i01 col);
+
+void ax_cir1( ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 r,ax_i8  col);
+void ax_cir2( ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 r,ax_i01 col);
+void ax_hcir1(ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 r,ax_i8  col);
+void ax_hcir2(ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 r,ax_i01 col);
+
+void ax_ell1( ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 rx,ax_i8 ry,ax_i8  col);
+void ax_ell2( ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 rx,ax_i8 ry,ax_i01 col);
+void ax_hell1(ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 rx,ax_i8 ry,ax_i8  col);
+void ax_hell2(ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 rx,ax_i8 ry,ax_i01 col);
+
+void ax_ln1(ax_i02 vaddr,ax_i8 scrnw,ax_i01 px0,ax_i01 px1,ax_i8  col);
+void ax_ln2(ax_i02 vaddr,ax_i8 scrnw,ax_i01 px0,ax_i01 px1,ax_i01 col);
+
+void ax_rec1( ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 w,ax_i8 h,ax_i8  col);
+void ax_rec2( ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 w,ax_i8 h,ax_i01 col);
+void ax_hrec1(ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 w,ax_i8 h,ax_i8  col);
+void ax_hrec2(ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 w,ax_i8 h,ax_i01 col);
 
 #if defined(__cplusplus)
 }

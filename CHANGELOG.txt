@@ -1,3 +1,12 @@
+# A.0
+
+* Add more functions for drawing geometric shapes;
+* Add function for configuring the palette;
+* Re-add algorithms;
+* Fix get and set using old naming convention;
+* Rename project to ax;
+* Update vsync;
+
 # 9.1
 
 * Remove algo references;

@@ -53,28 +53,33 @@ CXXFLAGS := \
 # HEADERS
 
 HDRS := \
+	include/ax/algo.h         \
 	include/ax/bs.h           \
 	include/ax/gfx.h          \
 	include/ax/key.h          \
 	include-private/ax/priv.h
 
-# BINARIES
+# ARTEFACTS
 
 OBJS := \
+	source/algo/cp.o       \
+	source/algo/fill.o     \
 	source/bs/done.o       \
 	source/bs/get.o        \
 	source/bs/set.o        \
+	source/gfx/blnk.o      \
 	source/gfx/clrscrn.o   \
 	source/gfx/flip.o      \
 	source/gfx/getvbnk.o   \
 	source/gfx/plot.o      \
 	source/gfx/plottex.o   \
 	source/gfx/rd.o        \
+	source/gfx/setcol.o    \
 	source/gfx/vsync.o     \
 	source/key/getkeymap.o \
 	source/priv/init.o
 
-LIB := libagbx.a
+LIB := libax.a
 
 # TARGETS
 

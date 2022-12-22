@@ -7,14 +7,14 @@
 .cpu arm7tdmi
 .thumb
 
-.globl ax_set10
-.globl ax_set20
+.globl ax_set01
+.globl ax_set02
 .globl ax_set8
 
 .func
 .thumb_func
 
-ax_set10:
+ax_set01:
 	strh r1,[r0] @ *(ax_i01 *)addr = val;
 	bx lr        @ return;
 
@@ -23,7 +23,7 @@ ax_set10:
 .func
 .thumb_func
 
-ax_set20:
+ax_set02:
 	str r1,[r0] @ *(ax_i02 *)addr = val;
 	bx lr       @ return;
 

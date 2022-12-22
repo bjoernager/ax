@@ -25,5 +25,5 @@ template<typename _pxtyp> [[gnu::always_inline]] inline static auto __ax_plottex
 	}
 }
 
-extern "C" auto ax_plottex1(::ax_i02 const _vaddr,::ax_i8 const _scrnw,::ax_i8 const * const  _tex,::ax_i01 const _px,::ax_i8 const _w,::ax_i8 const _h) -> void {::__ax_plottex(_vaddr,_scrnw,_tex,_px,_w,_h);}
+extern "C" auto ax_plottex1(::ax_i02 const _vaddr,::ax_i8 const _scrnw,::ax_i8 const *  const _tex,::ax_i01 const _px,::ax_i8 const _w,::ax_i8 const _h) -> void {::__ax_plottex(_vaddr,_scrnw,_tex,_px,_w,_h);}
 extern "C" auto ax_plottex2(::ax_i02 const _vaddr,::ax_i8 const _scrnw,::ax_i01 const * const _tex,::ax_i01 const _px,::ax_i8 const _w,::ax_i8 const _h) -> void {::__ax_plottex(_vaddr,_scrnw,_tex,_px,_w,_h);}

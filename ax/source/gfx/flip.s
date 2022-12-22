@@ -19,7 +19,7 @@ ax_flip:
 	ldr r0,.dispcntaddr @ ax_i02 dispcntaddr = 0x4000000u;
 	ldrh r1,[r0]        @ ax_i01 dispcnt = *(ax_i01 *)dispcntaddr;
 
-	@ XOR bit five:
+	@ XOR bit four:
 	movs r2,0b10000
 	eors r1,r2          @ dispcnt ^= 0b10000u;
 
@@ -29,6 +29,7 @@ ax_flip:
 	@ Get the address of the video bank:
 	b __ax_getvbnk    @ ax_i02 vaddr = __ax_getvbnk();
 	
+	@ Return:
 	bx lr               @ return vaddr;
 
 .endfunc

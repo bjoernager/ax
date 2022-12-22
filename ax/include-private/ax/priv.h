@@ -13,21 +13,21 @@
 extern "C" {
 #endif
 
-#define __ax_get10(_addr) (*(ax_i01 volatile *)_addr)
+#define __ax_get01(_addr) (*(ax_i01 volatile *)_addr)
 
-#define __ax_get20(_addr) (*(ax_i02 volatile *)_addr)
+#define __ax_get02(_addr) (*(ax_i02 volatile *)_addr)
 
 #define __ax_get8(_addr) (*(ax_i8 volatile *)_addr)
 
-#define __ax_set10(_addr,_val) ((void)(*(ax_i01 volatile *)_addr = _val))
+#define __ax_set01(_addr,_val) ((void)(*(ax_i01 volatile *)_addr = _val))
 
-#define __ax_set20(_addr,_val) ((void)(*(ax_i02 volatile *)_addr = _val))
+#define __ax_set02(_addr,_val) ((void)(*(ax_i02 volatile *)_addr = _val))
 
 #define __ax_set8(_addr,_val) ((void)(*(ax_i8 volatile *)_addr = _val))
 
 #define __ax_plot2(_vaddr,_px,_col) { \
 	ax_i02 const addr = _vaddr + _px * 0x2u; /* We multiply it by two as each pixel takes up two bytes. */ \
-	__ax_set10(addr,_col); \
+	__ax_set01(addr,_col); \
 }
 
 #if defined(__cplusplus)

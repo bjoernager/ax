@@ -32,17 +32,19 @@ typedef enum {
 	ax_err_max     = 0xFFu,
 } ax_err;
 
-constexpr ax_i04 ax_ver = 0x9u;
+constexpr ax_i04 ax_ver = 0xAu;
 
-[[noreturn]] void ax_done(ax_err err);
+constexpr ax_i01 ax_sec = 0x1;
 
-[[nodiscard]] ax_i01 ax_get10(ax_i02 addr);
-[[nodiscard]] ax_i02 ax_get20(ax_i02 addr);
+[[nodiscard]] ax_i01 ax_get01(ax_i02 addr);
+[[nodiscard]] ax_i02 ax_get02(ax_i02 addr);
 [[nodiscard]] ax_i8  ax_get8( ax_i02 addr);
 
-void ax_set10(ax_i02 addr,ax_i01 val);
-void ax_set20(ax_i02 addr,ax_i02 val);
+void ax_set01(ax_i02 addr,ax_i01 val);
+void ax_set02(ax_i02 addr,ax_i02 val);
 void ax_set8( ax_i02 addr,ax_i8  val);
+
+[[noreturn]] void ax_done(ax_err err);
 
 #if defined(__cplusplus)
 }

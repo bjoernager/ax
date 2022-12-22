@@ -1,4 +1,4 @@
-#include <agbx-demo.h>
+#include <ax-demo.h>
 
 #include <ax/gfx.h>
 

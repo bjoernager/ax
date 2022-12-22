@@ -5,7 +5,7 @@
 @ Please read this thoroughly, as to make sure to cater it to your own program.
 
 @ Image entry point (4)
-@ 32-bit ARM instruction that serves as the entry point of the image, which usually is a branch instruction. Must be "b __ax_init" if agbx is used.
+@ 32-bit ARM instruction that serves as the entry point of the image, which usually is a branch instruction. Must be "b __ax_init" if ax is used.
 .ARM
 .global _start
 _start: @ We define this label to stop the linker from complaining
@@ -17,7 +17,7 @@ _start: @ We define this label to stop the linker from complaining
 
 @ Game title (12)
 @ Twelve character ASCII-string (with uppercase letters) signalling the title of the program. If the string does not take up twelve characters, it is padded to that size with zero.
-.ascii "AGBXDEMO\x0\x0\x0\x0"
+.ascii "AXDEMO\x0\x0\x0\x0\x0\x0"
 
 @ Game code (4)
 @ Four character ASCII-string. This is the code that is printed on the cartridge sticker (following the "AGB-"-part).
