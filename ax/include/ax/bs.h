@@ -34,8 +34,6 @@ typedef enum {
 
 constexpr ax_i04 ax_ver = 0xAu;
 
-constexpr ax_i01 ax_sec = 0x1;
-
 [[nodiscard]] ax_i01 ax_get01(ax_i02 addr);
 [[nodiscard]] ax_i02 ax_get02(ax_i02 addr);
 [[nodiscard]] ax_i8  ax_get8( ax_i02 addr);

@@ -1,30 +1,10 @@
 <!DOCTYPE html>
 <html>
-	<h1>AGBx</h1>
-	<p>Framework for development on the Game Boy Advance.</p>
-	<h2>Features</h2>
-	<p>The goal of this project is to provide a modern, standard-compliant C library for developing games and other types of software for the Game Boy Advance series.</p>
-	<p>This project is still (relatively) early in development; Don't expect too much of it.</p>
-	<p>Current features include:</p>
-	<ul>
-		<li>
-			<p>Application wrapping (of the 'main' function);</p>
-		</li>
-		<li>
-			<p>Memory manipulation functions (writting to and reading from arbitrary memory addresses without undefined behaviour);</p>
-		</li>
-		<li>
-			<p>Minimal memory manipulation routines (currently only slow copying);</p>
-		</li>
-		<li>
-			<p>Basic input detection from the main keys &mdash; A, B, +Control Pad, L, R, Start, Select;</p>
-		</li>
-		<li>
-			<p>Simple facilities for the bitmap graphics modes (three, four, and five), such as vertical synchronisation, video bank flipping, plotters/readers;</p>
-		</li>
-	</ul>
-	<p>Whilst this project may not be as feature complete as others (such as <a href="https://www.coranac.com/tonc/text/toc.htm">TONC</a>), I still hope for it to be up there in the future.</p>
-	<p>I understand that the market for Game Boy games is nowhere near what it was during it's height twenty years ago, but I still hope for this hobbyist piece of software to someday prove useful for developers wanting to appeal to the retro market (or just for hobbyist projects of their own).</p>
+	<h1>ax</h1>
+	<p>The goal of this project is to provide a modern C library for developing games and other types of software for the Game Boy Advance series.</p>
+	<p>This project is still (relatively) early in development, so don't expect too much from it.</p>
+	<p>Whilst this project may not be as feature complete as others (such as <a href="https://www.coranac.com/tonc/text/toc.htm">TONC</a>), I still hope for it to someday get to the same level of quality and usefulness.</p>
+	<p>I understand that the market for Game Boy games is nowhere near what it was twenty years ago during it's height, but I still hope for this software to someday prove useful for developers wanting to appeal to the retro market or for other hobbyist programmers.</p>
 	<h2>Demo</h2>
 	<p>Provided is a simple demo program that functions as a graphics editor &ndash; akin to that of Paintbrush.</p>
 	<h3>Controls</h3>
@@ -33,16 +13,7 @@
 			<p>A: Colour the selected pixel;</p>
 		</li>
 		<li>
-			<p>+CONTROL PAD (UP): Move one pixel up on the canvas;</p>
-		</li>
-		<li>
-			<p>+CONTROL PAD (RIGHT): Move one pixel to the right on the canvas;</p>
-		</li>
-		<li>
-			<p>+CONTROL PAD (DOWN): Move one pixel down on the canvas;</p>
-		</li>
-		<li>
-			<p>+CONTROL PAD (LEFT): Move one pixel to the left on the canvas;</p>
+			<p>+CONTROL PAD: Move one pixel to the specified direction on the canvas;</p>
 		</li>
 		<li>
 			<p>R: Rotate the palette counterclockwise;</p>
@@ -58,13 +29,13 @@
 		</li>
 	</ul>
 	<h2>Building</h2>
-	<p>The project (including the demo) is written in Standard C (ISO/IEC 9899:2023, N3047). As the Game Boy Advance uses an ARM (ARM7TDMI) processor, AGBx requires an ARM cross-compiler.</p>
-	<p>For GCC, the appropriate package is <i>arm-none-eabi-gcc</i> on Arch Linux and <i>gcc-arm-none-eabi</i> on Debian. Clang supports supports cross-compilation by default, and this platform can be set via the <i>--target=arm-none-eabi</i> option.</p>
-	<p>The used cross-compiler can be configured in the makefiles, however, it must be GCC-compatible unless you're willing to make major adjustments.</p>
+	<p>The project (including the demo) is written in Standard C (ISO/IEC 9899:2023, N3054).</p>
+	<p>As the Game Boy Advance uses an ARM (ARM7TDMI) processor, ax requires an ARM (cross-)compiler. For GCC, the appropriate package is <i>arm-none-eabi-gcc</i> on Arch Linux and <i>gcc-arm-none-eabi</i> on Debian. Clang supports cross-compilation by default, and this platform can be set via the <i>--target=arm-none-eabi</i> option.</p>
+	<p>The used compiler can be configured in the makefiles, however, it must be GCC-compatible unless you're willing to make major adjustments.</p>
 	<br />
 	<p>The provided makefiles are for GNU Make (hence the filename of <i>GNUmakefile</i>) and depend on it's extensions.</p>
 	<h3>Demo</h3>
-	<p>The demo uses <a href="https://mandelbrot.dk/agbsum">agbsum</a> (<a href="https://mandelbrot.dk/pkgbuild_agbsum">pkgbuild</a>) for patching the demo image header checksum so that it isn't rejected by the bootloader. This patch isn't always required, however, and the makefile (at <i>demo/GNUmakefile</i>) may be modified to skip it.</p>
+	<p>The demo uses <a href="https://mandelbrot.dk/agbsum">agbsum</a> (<a href="https://mandelbrot.dk/pkgbuild_agbsum">pkgbuild</a>) for patching the demo image header checksum so that it isn't rejected by the bootloader. This patch isn't always required (some emulators ignore it), and the makefile (at <i>demo/GNUmakefile</i>) may be modified to skip it.</p>
 	<h2>Copyright and License</h2>
 	<p>Copyright 2022 Gabriel Jensen.</p>
 	<p>All source files (with exceptions, see the individual files) &ndash; including the makefiles &ndash; are licensed under the <a href="https://mozilla.org/MPL/2.0">Mozilla Public License 2.0</a>.</p>
