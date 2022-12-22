@@ -15,8 +15,9 @@
 ax_getkeymap:
 	@ Load the keys:
 	ldr r0,.addr @ ax_i02 addr = 0x4000130u;
-	ldrh r0,[r0] @ ax_keymap keymap = *(ax_i01 *)addr;
+	ldrh r0,[r0] @ ax_keymap keymap = {._keys = *(ax_i01 *)addr};
 
+	@ Return:
 	bx lr        @ return keymap;
 
 .endfunc

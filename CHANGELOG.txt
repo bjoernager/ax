@@ -1,3 +1,7 @@
+# A.2
+
+* Fix init not exchanging instruction set when start is implemented with ARM instructions;
+
 # A.1
 
 * Update readme;

@@ -15,7 +15,7 @@ template<typename _pxtyp> [[gnu::always_inline]] inline static auto __ax_plottex
 		::ax_i01 const rowstart = px;
 		for (;px != rowstart + _w;++px) {
 			if constexpr (::__ax_typeq<_pxtyp,::ax_i01>) {
-				ax_plot2(_vaddr,px,*(texpos++));
+				__ax_plot2(_vaddr,px,*(texpos++));
 			}
 			else {
 				ax_plot1(_vaddr,px,*(texpos++));
