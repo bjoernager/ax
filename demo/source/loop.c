@@ -25,6 +25,9 @@ bool axd_loop(axd_dat * const _dat) {
 			_dat->prevcol = ax_rd1(_dat->vaddr,ax_coord(ax_scrnw3,_dat->pos.x,_dat->pos.y));
 			ax_plot1(_dat->vaddr,ax_coord(ax_scrnw3,_dat->pos.x,_dat->pos.y),0x4u);
 		}
+		if (upd.keydwn) {
+			while (ax_chkkey(ax_getkeymap(),upd.key)) {}
+		}
 	}
 	return err;
 }

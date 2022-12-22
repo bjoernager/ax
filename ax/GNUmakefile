@@ -74,6 +74,7 @@ OBJS := \
 	source/gfx/plot.o      \
 	source/gfx/plottex.o   \
 	source/gfx/rd.o        \
+	source/gfx/rec.o       \
 	source/gfx/setcol.o    \
 	source/gfx/vsync.o     \
 	source/key/getkeymap.o \

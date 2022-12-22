@@ -1,7 +1,7 @@
 #if !defined(axd_hdr)
 #define axd_hdr
 
-#include <ax/bs.h>
+#include <ax/key.h>
 
 typedef struct {
 	ax_i8 x;
@@ -17,10 +17,12 @@ typedef struct {
 } axd_dat;
 
 typedef struct {
-	bool done;
-	bool err;
-	bool drw;
-	bool mv;
+	bool   done;
+	bool   err;
+	ax_key key;
+	bool   keydwn;
+	bool   drw;
+	bool   mv;
 } axd_upd;
 
 axd_upd axd_chkkeys(  axd_dat * dat);
