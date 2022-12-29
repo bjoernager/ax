@@ -4,8 +4,10 @@
 	If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0>.
 */
 
-#if !defined(__ax_hdr_priv)
-#define __ax_hdr_priv
+#if !defined(__ax_hdr_ax_priv)
+#define __ax_hdr_ax_priv
+
+#include <ax/bs.h>
 
 #include <ax/bs.h>
 

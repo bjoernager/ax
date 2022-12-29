@@ -7,22 +7,14 @@
 .cpu arm7tdmi
 .thumb
 
-.globl ax_getkeymap
+.extern memset
+
+.globl memset_explicit
 
 .func
 .thumb_func
 
-ax_getkeymap:
-	@ Load the keys:
-	ldr r0,.addr @ ax_i02 addr = 0x4000130u;
-	ldrh r0,[r0] @ ax_keymap keymap = {._keys = *(ax_i01 *)addr};
-
-	@ Return:
-	bx lr        @ return keymap;
+memset_explicit:
+	b memset
 
 .endfunc
-
-.align
-
-.addr:
-	.word 0x4000130

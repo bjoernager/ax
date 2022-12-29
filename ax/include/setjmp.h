@@ -4,22 +4,17 @@
 	If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0>.
 */
 
-#if !defined(__ax_hdr_ax_algo)
-#define __ax_hdr_ax_algo
+#if !defined(__ax_hdr_setjmp)
+#define __ax_hdr_setjmp
 
 #include <ax/bs.h>
 
-#include <ax/bs.h>
+#define __STDC_VERSION_SETJMP_H__ (202311l)
 
-#if defined(__cplusplus)
-extern "C" {
-#endif
+typedef ax_i02 jmp_buf[0xBu];
 
-void ax_cp(  void const * in, ax_i02 num,void * out);
-void ax_fill(void *       ptr,ax_i02 num,ax_i8  byte);
+int setjmp(jmp_buf env);
 
-#if defined(__cplusplus)
-}
-#endif
+[[noreturn]] void longjmp(jmp_buf env,int val);
 
 #endif

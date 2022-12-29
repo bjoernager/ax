@@ -4,8 +4,8 @@
 	If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0>.
 */
 
-#if !defined(__ax_hdr_key)
-#define __ax_hdr_key
+#if !defined(__ax_hdr_ax_key)
+#define __ax_hdr_ax_key
 
 #include <ax/bs.h>
 
@@ -26,7 +26,7 @@ typedef struct {
 	ax_i01 _keys;
 } ax_keymap;
 
-#define ax_chkkey(_map,_key) ((bool)((_map)._keys & (ax_i01)(_key) ^ (ax_i01)(_key)))
+#define ax_chkkey(_map,_key) ((bool)(((_map)._keys & (ax_i01)(_key)) ^ (ax_i01)(_key)))
 
 ax_keymap ax_getkeymap(void);
 

@@ -13,23 +13,23 @@
 .thumb_func
 
 ax_blnk:
-	@ Get the current value of dispcnt:
-	ldr r0,.dispcntaddr @ ax_i02 dispcntaddr = 0x4000000u;
-	ldrh r1,[r0]        @ ax_i01 dispcnt = *(ax_i01 *)dispcntaddr;
+	@ Get the current value of dispcntrl:
+	ldr r0,.dispcntrladdr @ ax_i02 dispcntrladdr = 0x4000000u;
+	ldrh r1,[r0]          @ ax_i01 dispcntrl = *(ax_i01 *)dispcntrladdr;
 
 	@ XOR bit seven:
 	movs r2,0b10000000
-	eors r1,r2          @ dispcnt ^= 0b10000000u;
+	eors r1,r2            @ dispcntrl ^= 0b10000000u;
 
-	@ Save dispcnt:
-	strh r1,[r0]        @ *(ax_i01 *)dispcntaddr = dispcnt;
+	@ Save dispcntrl:
+	strh r1,[r0]          @ *(ax_i01 *)dispcntrladdr = dispcntrl;
 
 	@ Return:	
-	bx lr               @ return vaddr;
+	bx lr                 @ return vaddr;
 
 .endfunc
 
 .align
 
-.dispcntaddr:
-	.long 0x4000000
+.dispcntrladdr:
+	.word 0x4000000

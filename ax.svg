@@ -1,0 +1,11 @@
+<!-- Copyright 2022 Gabriel Jensen. This work is licensed under a Creative Commons Attribution 4.0 International License. -->
+<svg height="108" width="108" xmlns="http://www.w3.org/2000/svg">
+	<!-- background -->
+	<polygon fill="#422984" points="0,0 108,0 108,108 0,108" />
+	<!-- a -->
+	<polygon fill="#FFFFFF" points="24,36 36,36 48,72 36,72 30,54 24,72 12,72 18,54" stroke="#FFFFFF" stroke-width="4" />
+	<polygon fill="#422984" points="24,36 36,36 48,72 36,72 30,54 24,72 12,72 18,54 17,54 30,54 21,45" />
+	<!-- x -->
+	<polygon fill="#FFFFFF" points="60,36 72,36 78,45 84,36 96,36 84,54 96,72 84,72 78,63 72,72 60,72 72,54" stroke="#FFFFFF" stroke-width="4" />
+	<polygon fill="#422984" points="60,36 72,36 78,45 84,36 96,36 84,54 96,72 84,72 78,63 72,72 60,72 72,54 78,54" />
+</svg>

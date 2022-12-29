@@ -39,4 +39,4 @@ ax_vsync:
 .align
 
 .vcntaddr:
-	.long 0x4000006
+	.word 0x4000006

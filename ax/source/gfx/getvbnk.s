@@ -14,9 +14,9 @@
 .thumb_func
 
 ax_getvbnk:
-	@ Get the current value of dispcnt:
-	ldr r0,.dispcntaddr @ ax_i02 dispcntaddr = 0x4000000u;
-	ldrh r1,[r0]        @ ax_i01 dispcnt = *(ax_i01 *)dispcntaddr;
+	@ Get the current value of dispcntrl:
+	ldr r0,.dispcntrladdr @ ax_i02 dispcntrladdr = 0x4000000u;
+	ldrh r1,[r0]        @ ax_i01 dispcntrl = *(ax_i01 *)dispcntrladdr;
 
 	@ Get the address:
 	b __ax_getvbnk      @ ax_i02 vaddr = __ax_getvbnk();
@@ -28,7 +28,7 @@ ax_getvbnk:
 .func
 .thumb_func
 
-__ax_getvbnk: @ Takes the value of dispcnt in r1.
+__ax_getvbnk: @ Takes the value of dispcntrl in r1.
 	@ Check if the fifth bit is set:
 	movs r0,0b10000
 	tst r1,r0
@@ -48,15 +48,15 @@ __ax_getvbnk: @ Takes the value of dispcnt in r1.
 
 .align
 
-.dispcntaddr:
-	.long 0x4000000
+.dispcntrladdr:
+	.word 0x4000000
 
 .align
 
 .vbnk0addr:
-	.long 0x6000000
+	.word 0x6000000
 
 .align
 
 .vbnk1addr:
-	.long 0x600A000
+	.word 0x600A000

@@ -5,24 +5,15 @@
 .syntax unified
 
 .cpu arm7tdmi
-.thumb
+.arm
 
-.globl ax_getkeymap
+.globl setjmp
 
 .func
-.thumb_func
 
-ax_getkeymap:
-	@ Load the keys:
-	ldr r0,.addr @ ax_i02 addr = 0x4000130u;
-	ldrh r0,[r0] @ ax_keymap keymap = {._keys = *(ax_i01 *)addr};
-
-	@ Return:
-	bx lr        @ return keymap;
+setjmp:
+	stm r0,{r4,r5,r6,r7,r8,r9,r10,fp,ip,sp,lr} @ Save the registers into the registers.
+	mov r0,0x0 @ Set the return code.
+	bx lr
 
 .endfunc
-
-.align
-
-.addr:
-	.word 0x4000130

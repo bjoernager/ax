@@ -5,31 +5,31 @@
 # TOOLS
 
 AS      := arm-none-eabi-as
-#CC      := arm-none-eabi-gcc -Dbool="_Bool" -Dfalse="((_Bool)+0x0u)" -Dfalse="((_Bool)+0x0u)"
-CC      := clang --target=arm-none-eabi
-#CXX      := arm-none-eabi-g++ 
-CXX     := clang++ --target=arm-none-eabi
+CC      := arm-none-eabi-gcc
+#CC      := clang --target=arm-none-eabi
+CXX      := arm-none-eabi-g++ 
+#CXX     := clang++ --target=arm-none-eabi
 OBJCOPY := arm-none-eabi-objcopy
 
 # TOOL FLAGS
 
 CFLAGS := \
-	-Iinclude                  \
-	-Iinclude-private          \
-	-Ofast                     \
-	-Wall                      \
-	-Wextra                    \
-	-Wpedantic                 \
-	-Wno-gnu-binary-literal    \
-	-Wno-gnu-empty-initializer \
-	-ffreestanding             \
-	-fno-builtin               \
-	-fno-strict-aliasing       \
-	-fshort-enums              \
-	-mcpu=arm7tdmi             \
-	-mthumb                    \
-	-mtune=arm7tdmi            \
-	-nostdlib                  \
+	-Iinclude            \
+	-Iinclude-private    \
+	-Oz                  \
+	-Wall                \
+	-Wextra              \
+	-Wpadded             \
+	-Wpedantic           \
+	-ffreestanding       \
+	-fno-strict-aliasing \
+	-fshort-enums        \
+	-mabi=aapcs          \
+	-mcpu=arm7tdmi       \
+	-mthumb              \
+	-mtune=arm7tdmi      \
+	-nostdlib            \
+	-pipe                \
 	-std=c2x
 
 CXXFLAGS := \
@@ -40,14 +40,15 @@ CXXFLAGS := \
 	-Wextra              \
 	-Wpedantic           \
 	-ffreestanding       \
-	-fno-builtin         \
 	-fno-exceptions      \
 	-fno-strict-aliasing \
 	-fshort-enums        \
+	-mabi=aapcs          \
 	-mcpu=arm7tdmi       \
 	-mthumb              \
 	-mtune=arm7tdmi      \
 	-nostdlib            \
+	-pipe                \
 	-std=c++2b
 
 # HEADERS
@@ -57,28 +58,48 @@ HDRS := \
 	include/ax/bs.h           \
 	include/ax/gfx.h          \
 	include/ax/key.h          \
+	include/float.h           \
+	include/iso646.h          \
+	include/limits.h          \
+	include/stdalign.h        \
+	include/stdarg.h          \
+	include/stdbit.h          \
+	include/stdbool.h         \
+	include/stddef.h          \
+	include/stdint.h          \
+	include/stdlib.h          \
+	include/stdnoreturn.h     \
+	include/string.h          \
 	include-private/ax/priv.h
 
 # ARTEFACTS
 
 OBJS := \
-	source/algo/cp.o       \
-	source/algo/fill.o     \
-	source/bs/done.o       \
-	source/bs/get.o        \
-	source/bs/set.o        \
-	source/gfx/blnk.o      \
-	source/gfx/clrscrn.o   \
-	source/gfx/flip.o      \
-	source/gfx/getvbnk.o   \
-	source/gfx/plot.o      \
-	source/gfx/plottex.o   \
-	source/gfx/rd.o        \
-	source/gfx/rec.o       \
-	source/gfx/setcol.o    \
-	source/gfx/vsync.o     \
-	source/key/getkeymap.o \
-	source/priv/init.o
+	source/algo/cp.o                \
+	source/algo/fill.o              \
+	source/bs/done.o                \
+	source/bs/get.o                 \
+	source/bs/set.o                 \
+	source/bs/trap.o                \
+	source/gfx/blnk.o               \
+	source/gfx/clrscrn.o            \
+	source/gfx/flip.o               \
+	source/gfx/getvbnk.o            \
+	source/gfx/plot.o               \
+	source/gfx/plottex.o            \
+	source/gfx/rd.o                 \
+	source/gfx/rec.o                \
+	source/gfx/setcol.o             \
+	source/gfx/vsync.o              \
+	source/key/getkeymap.o          \
+	source/priv/init.o              \
+	source/setjmp/longjmp.o         \
+	source/setjmp/setjmp.o          \
+	source/stdlib/memalignement.o   \
+	source/string/memcpy.o          \
+	source/string/memset.o          \
+	source/string/memset_explicit.o \
+	source/string/strlen.o
 
 LIB := libax.a
 

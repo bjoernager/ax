@@ -30,28 +30,28 @@ axd_upd axd_chkkeys(axd_dat * _dat) {
 		return upd;
 	}
 	axd_chk(ax_key_pade) {
-		if (_dat->pos.x != 0xEEu) {
+		if (_dat->pos.x != 0xEDu) {
 			upd.mv = true;
 			++_dat->pos.x;
 			return upd;
 		}
 	}
 	axd_chk(ax_key_padn) {
-		if (_dat->pos.y != 0x1u) {
+		if (_dat->pos.y != 0x2u) {
 			upd.mv = true;
 			--_dat->pos.y;
 			return upd;
 		}
 	}
 	axd_chk(ax_key_pads) {
-		if (_dat->pos.y != 0x9Eu) {
+		if (_dat->pos.y != 0x9Du) {
 			upd.mv = true;
 			++_dat->pos.y;
 			return upd;
 		}
 	}
 	axd_chk(ax_key_padw) {
-		if (_dat->pos.x != 0x1u) {
+		if (_dat->pos.x != 0x2u) {
 			upd.mv = true;
 			--_dat->pos.x;
 			return upd;

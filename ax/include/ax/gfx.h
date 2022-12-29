@@ -4,8 +4,10 @@
 	If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0>.
 */
 
-#if !defined(__ax_hdr_gfx)
-#define __ax_hdr_gfx
+#if !defined(__ax_hdr_ax_gfx)
+#define __ax_hdr_ax_gfx
+
+#include <ax/bs.h>
 
 #include <ax/bs.h>
 
@@ -20,7 +22,7 @@ constexpr ax_i8 ax_scrnh5 = 0x80u;
 
 #define ax_coord(_scrnw,_x,_y) ((ax_i01)((ax_i01)(_y) * (ax_i01)(_scrnw) + (ax_i01)(_x)))
 
-#define ax_col(_r,_g,_b) ((ax_i01)(((ax_i01)(_r) | (ax_i01)(_g) << 0x5u | (ax_i01)(_b) << 0xAu) & 0b000000111111111111111))
+#define ax_col(_r,_g,_b) ((ax_i01)(((ax_i01)_r | (ax_i01)_g << 0x5u | (ax_i01)_b << 0xAu) & 0b000000111111111111111))
 
 void   ax_blnk(   void);
 ax_i02 ax_flip(   void);

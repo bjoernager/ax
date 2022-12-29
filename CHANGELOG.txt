@@ -1,3 +1,16 @@
+# B.0
+
+* Add error screen;
+* Implement some standard library features; 
+* Add logo;
+* Add signed integral types;
+* Add function for trapping;
+* Don't use nodiscard;
+* Add more error codes;
+* Remove badmd error;
+* Add type limit macros;
+* Update readme;
+
 # A.3
 
 * Implement rec (excluding hrec);

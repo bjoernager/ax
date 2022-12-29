@@ -5,25 +5,25 @@
 # TOOLS
 
 AS      := arm-none-eabi-as
-CC      := clang --target=arm-none-eabi
-#CC      := arm-none-eabi-gcc
+CC      := arm-none-eabi-gcc
+#CC      := clang --target=arm-none-eabi
 LD      := arm-none-eabi-ld
 OBJCOPY := arm-none-eabi-objcopy
 
 # TOOL FLAGS
 
 CFLAGS := \
-	-I../ax/include            \
-	-Iinclude                  \
-	-O3                        \
-	-Wall                      \
-	-Wextra                    \
-	-Wpedantic                 \
-	-Wno-gnu-binary-literal    \
-	-Wno-gnu-empty-initializer \
-	-fshort-enums              \
-	-mcpu=arm7tdmi             \
-	-nostdlib                  \
+	-I../ax/include \
+	-Iinclude       \
+	-Oz             \
+	-Wall           \
+	-Wextra         \
+	-Wpedantic      \
+	-ffreestanding  \
+	-fshort-enums   \
+	-mcpu=arm7tdmi  \
+	-mthumb         \
+	-nostdlib       \
 	-std=c2x
 
 LDFLAGS := \

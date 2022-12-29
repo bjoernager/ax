@@ -29,4 +29,4 @@ ax_setcol:
 .align
 
 .paladdr:
-	.long 0x5000000
+	.word 0x5000000

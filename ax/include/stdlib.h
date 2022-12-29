@@ -4,22 +4,18 @@
 	If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0>.
 */
 
-#if !defined(__ax_hdr_ax_algo)
-#define __ax_hdr_ax_algo
+#if !defined(__ax_hdr_stdlib)
+#define __ax_hdr_stdlib
 
 #include <ax/bs.h>
 
-#include <ax/bs.h>
+#define __STDC_VERSION_STDLIB_H__ (202311l)
 
-#if defined(__cplusplus)
-extern "C" {
-#endif
+#define NULL nullptr
 
-void ax_cp(  void const * in, ax_i02 num,void * out);
-void ax_fill(void *       ptr,ax_i02 num,ax_i8  byte);
+typedef ax_i02 size_t;
+typedef ax_i02 wchar_t;
 
-#if defined(__cplusplus)
-}
-#endif
+size_t memalignment(void const * p);
 
 #endif
