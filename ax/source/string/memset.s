@@ -1,4 +1,4 @@
-@ Copyright 2022 Gabriel Jensen.
+@ Copyright 2022-2023 Gabriel Jensen.
 @ This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 @ If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0>.
 
@@ -23,7 +23,7 @@ memset:
 	movs r2,r3
 	
 	bl ax_fill
-	pop {r0,r1}
+	pop {r0,r1} @ We cannot pop into lr.
 	bx r1
 
 .endfunc
