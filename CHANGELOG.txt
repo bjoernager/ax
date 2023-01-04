@@ -1,3 +1,14 @@
+# C.0
+
+* Implement cp in assembly;
+* Implement stdarg header;
+* Implement memcpy in assembly;
+* Implement strlen in assembly;
+* Add old-style <string.h> search functions;
+* Implement memmove;
+* Add function for copying in byte chunks;
+* Add function for division and modulo;
+
 # B.0
 
 * Add error screen;

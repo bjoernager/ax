@@ -16,12 +16,12 @@
 ax_getvbnk:
 	@ Get the current value of dispcntrl:
 	ldr r0,.dispcntrladdr @ ax_i02 dispcntrladdr = 0x4000000u;
-	ldrh r1,[r0]        @ ax_i01 dispcntrl = *(ax_i01 *)dispcntrladdr;
+	ldrh r1,[r0]          @ ax_i01 dispcntrl = *(ax_i01 *)dispcntrladdr;
 
 	@ Get the address:
-	b __ax_getvbnk      @ ax_i02 vaddr = __ax_getvbnk();
+	b __ax_getvbnk        @ ax_i02 vaddr = __ax_getvbnk();
 	
-	bx lr               @ return vaddr;
+	bx lr                 @ return vaddr;
 
 .endfunc
 

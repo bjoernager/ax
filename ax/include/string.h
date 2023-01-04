@@ -32,6 +32,16 @@ int strcmp( char const * s1,char const * s2);
 int strncmp(char const * s1,char const * s2);
 /* strxfrm not required. */
 
+/* We're missing the generic variations of the following functions: */
+void * memchr( void const *    s, int             c, size_t n);
+char * strchr( char const *    s, int             c);
+size_t strcspn(char const *    s1,char const *    s2);
+char * strpbrk(char const *    s1,char const *    s2);
+char * strrchr(char const *    s1,int             c);
+size_t strspn( char const *    s1,char const *    s2);
+char * strstr( char const *    s1,char const *    s2);
+char * strtok( char * restrict s1,char * restrict s2);
+
 void * memset(         void *       s,int c,size_t n);
 void * memset_explicit(void *       s,int c,size_t n);
 /* strerror is not required. */

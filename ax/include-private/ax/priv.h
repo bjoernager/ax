@@ -9,8 +9,6 @@
 
 #include <ax/bs.h>
 
-#include <ax/bs.h>
-
 #if defined(__cplusplus)
 extern "C" {
 #endif

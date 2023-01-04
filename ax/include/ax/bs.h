@@ -82,7 +82,7 @@ typedef enum {
 	ax_err_max        = 0xFFu,
 } ax_err;
 
-constexpr ax_i04 ax_ver = 0xBu;
+constexpr ax_i04 ax_ver = 0xCu;
 
 ax_i01 ax_get01(ax_i02 addr);
 ax_i02 ax_get02(ax_i02 addr);
@@ -92,8 +92,8 @@ void ax_set01(ax_i02 addr,ax_i01 val);
 void ax_set02(ax_i02 addr,ax_i02 val);
 void ax_set8( ax_i02 addr,ax_i8  val);
 
-[[noreturn]] void ax_done(ax_err err);
-[[noreturn]] void ax_trap(void);
+void ax_done(ax_err err) [[noreturn]];
+void ax_trap(void)       [[noreturn]];
 
 #if defined(__cplusplus)
 }

@@ -7,7 +7,7 @@
 AS      := arm-none-eabi-as
 CC      := arm-none-eabi-gcc
 #CC      := clang --target=arm-none-eabi
-CXX      := arm-none-eabi-g++ 
+CXX     := arm-none-eabi-g++ 
 #CXX     := clang++ --target=arm-none-eabi
 OBJCOPY := arm-none-eabi-objcopy
 
@@ -76,6 +76,8 @@ HDRS := \
 
 OBJS := \
 	source/algo/cp.o                \
+	source/algo/cp8.o               \
+	source/algo/divmod.o            \
 	source/algo/fill.o              \
 	source/bs/done.o                \
 	source/bs/get.o                 \
@@ -97,6 +99,7 @@ OBJS := \
 	source/setjmp/setjmp.o          \
 	source/stdlib/memalignement.o   \
 	source/string/memcpy.o          \
+	source/string/memmove.o         \
 	source/string/memset.o          \
 	source/string/memset_explicit.o \
 	source/string/strlen.o

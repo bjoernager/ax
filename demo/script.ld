@@ -13,8 +13,8 @@ MEMORY {
 }
 
 SECTIONS {
-	.bss    : {*(.bss*)}    > iwram
-	.data   : {*(.data*)}   > iwram
+	.bss    : {*(.bss*)}    > ewram
+	.data   : {*(.data*)}   > ewram
 	.text   : {*(.text*)}   > rom
 	.rodata : {*(.rodata*)} > rom
 }

@@ -28,7 +28,7 @@
 
 typedef ax_i02s                 ptrdiff_t;
 typedef ax_i02                  size_t;
-typedef long double             max_align_t;
+typedef unsigned long long      max_align_t;
 typedef ax_i02                  wchar_t;
 typedef typeof_unqual (nullptr) nullptr_t;
 

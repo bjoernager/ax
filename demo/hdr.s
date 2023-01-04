@@ -41,7 +41,7 @@ _start: @ We define this label to stop the linker from complaining
 		@ "J": Japan
 		@ "P": Elsewhere
 		@ "S": Spain
-.ascii "CXXE"
+.ascii "CAXE"
 
 @ Maker code (2)
 @ Two character ASCII string. Identifies the (commerical) developer.

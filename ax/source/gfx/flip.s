@@ -17,20 +17,20 @@
 ax_flip:
 	@ Get the current value of dispcntrl:
 	ldr r0,.dispcntrladdr @ ax_i02 dispcntrladdr = 0x4000000u;
-	ldrh r1,[r0]        @ ax_i01 dispcntrl = *(ax_i01 *)dispcntrladdr;
+	ldrh r1,[r0]         @ ax_i01 dispcntrl = *(ax_i01 *)dispcntrladdr;
 
 	@ XOR bit four:
 	movs r2,0b10000
-	eors r1,r2          @ dispcntrl ^= 0b10000u;
+	eors r1,r2           @ dispcntrl ^= 0b10000u;
 
 	@ Save dispcntrl:
-	strh r1,[r0]        @ *(ax_i01 *)dispcntrladdr = dispcntrl;
+	strh r1,[r0]         @ *(ax_i01 *)dispcntrladdr = dispcntrl;
 
 	@ Get the address of the video bank:
-	b __ax_getvbnk    @ ax_i02 vaddr = __ax_getvbnk();
+	b __ax_getvbnk       @ ax_i02 vaddr = __ax_getvbnk();
 	
 	@ Return:
-	bx lr               @ return vaddr;
+	bx lr                @ return vaddr;
 
 .endfunc
 

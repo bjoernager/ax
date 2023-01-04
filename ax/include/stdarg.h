@@ -9,6 +9,16 @@
 
 #include <ax/bs.h>
 
-/* This is gonna be complicated. */
+#define __STDC_VERSION_STDARG_H__ (202311l)
+
+#define va_arg(_ap,_type) ((_type)0x0u)
+
+#define va_copy(_dest,_src) ((void)0x0u)
+
+#define va_end(_ap) ((void)0x0u)
+
+#define va_start(_ap,...) ((void)0x0u)
+
+typedef void * va_list;
 
 #endif

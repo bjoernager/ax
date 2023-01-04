@@ -9,14 +9,20 @@
 
 #include <ax/bs.h>
 
-#include <ax/bs.h>
-
 #if defined(__cplusplus)
 extern "C" {
 #endif
 
+typedef struct {
+	ax_i02 quot;
+	ax_i02 rem;
+} ax_quotrem;
+
 void ax_cp(  void const * in, ax_i02 num,void * out);
+void ax_cp8( void const * in, ax_i02 num,void * out);
 void ax_fill(void *       ptr,ax_i02 num,ax_i8  byte);
+
+ax_quotrem ax_divmod(ax_i02 num,ax_i02 den) [[unsequenced]];
 
 #if defined(__cplusplus)
 }

@@ -26,7 +26,7 @@ typedef struct {
 	ax_i01 _keys;
 } ax_keymap;
 
-#define ax_chkkey(_map,_key) ((bool)(((_map)._keys & (ax_i01)(_key)) ^ (ax_i01)(_key)))
+#define ax_chkkey(_map,_key) ((bool)(((_map)._keys ^ 0b11111111'11111111u) & (ax_i01)(_key)))
 
 ax_keymap ax_getkeymap(void);
 
