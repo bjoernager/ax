@@ -9,9 +9,7 @@
 
 #include <ax/bs.h>
 
-#if defined(__cplusplus)
-extern "C" {
-#endif
+__ax_cdecl
 
 typedef struct {
 	ax_i02 quot;
@@ -22,10 +20,8 @@ void ax_cp(  void const * in, ax_i02 num,void * out);
 void ax_cp8( void const * in, ax_i02 num,void * out);
 void ax_fill(void *       ptr,ax_i02 num,ax_i8  byte);
 
-ax_quotrem ax_divmod(ax_i02 num,ax_i02 den) [[unsequenced]];
+[[unsequenced]] ax_quotrem ax_divmod(ax_i02 num,ax_i02 den);
 
-#if defined(__cplusplus)
-}
-#endif
+__ax_endcdecl
 
 #endif

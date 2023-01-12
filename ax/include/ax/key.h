@@ -9,6 +9,8 @@
 
 #include <ax/bs.h>
 
+__ax_cdecl
+
 typedef enum {
 	ax_key_a     = 0b00000000'00000001u,
 	ax_key_b     = 0b00000000'00000010u,
@@ -29,5 +31,7 @@ typedef struct {
 #define ax_chkkey(_map,_key) ((bool)(((_map)._keys ^ 0b11111111'11111111u) & (ax_i01)(_key)))
 
 ax_keymap ax_getkeymap(void);
+
+__ax_endcdecl
 
 #endif

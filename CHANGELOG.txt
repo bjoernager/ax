@@ -1,3 +1,9 @@
+# C.2
+
+* Improve compatibility with C++;
+* Add missing C++ support for 'key' header;
+* Fix and improve 'limits' header;
+
 # C.1
 
 * Update copyright notices;

@@ -8,10 +8,10 @@
 #define __ax_hdr_ax_bs
 
 #if defined(__cplusplus)
-extern "C" {
-#endif
-
-#if !defined(__cplusplus)
+#define __ax_cdecl    extern "C" {
+#define __ax_endcdecl }
+#define __ax_unseq
+#else
 /* C23 compatibility: */
 #define alignas       _Alignas
 #define alignof       _Alignof
@@ -24,7 +24,13 @@ extern "C" {
 #define true          ((_Bool)+0x1u)
 #define typeof        __typeof__
 #define typeof_unqual __typeof__
+
+#define __ax_cdecl
+#define __ax_endcdecl
+#define __ax_unseq    [[unsequenced]]
 #endif
+
+__ax_cdecl
 
 #define ax_maxval_i ((int)+0x7FFFFFFF)
 #define ax_minval_i ((int)-0x80000000)
@@ -92,11 +98,9 @@ void ax_set01(ax_i02 addr,ax_i01 val);
 void ax_set02(ax_i02 addr,ax_i02 val);
 void ax_set8( ax_i02 addr,ax_i8  val);
 
-void ax_done(ax_err err) [[noreturn]];
-void ax_trap(void)       [[noreturn]];
+[[noreturn]] void ax_done(ax_err err);
+[[noreturn]] void ax_trap(void);
 
-#if defined(__cplusplus)
-}
-#endif
+__ax_endcdecl
 
 #endif

@@ -9,9 +9,7 @@
 
 #include <ax/bs.h>
 
-#if defined(__cplusplus)
-extern "C" {
-#endif
+__ax_cdecl
 
 #define __ax_get01(_addr) (*(ax_i01 volatile *)_addr)
 
@@ -30,9 +28,7 @@ extern "C" {
 	__ax_set01(addr,_col); \
 }
 
-#if defined(__cplusplus)
-}
-#endif
+__ax_endcdecl
 
 #if defined(__cplusplus)
 

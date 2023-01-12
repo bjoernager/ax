@@ -21,6 +21,7 @@ CFLAGS := \
 	-Wextra              \
 	-Wpadded             \
 	-Wpedantic           \
+	-Wno-attributes      \
 	-ffreestanding       \
 	-fno-strict-aliasing \
 	-fshort-enums        \
@@ -39,6 +40,7 @@ CXXFLAGS := \
 	-Wall                \
 	-Wextra              \
 	-Wpedantic           \
+	-Wno-attributes      \
 	-ffreestanding       \
 	-fno-exceptions      \
 	-fno-strict-aliasing \

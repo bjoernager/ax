@@ -9,9 +9,7 @@
 
 #include <ax/bs.h>
 
-#if defined(__cplusplus)
-extern "C" {
-#endif
+__ax_cdecl
 
 constexpr ax_i8 ax_scrnw3 = 0xF0u;
 constexpr ax_i8 ax_scrnw5 = 0xA0u;
@@ -59,8 +57,6 @@ void ax_rec2( ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 w,ax_i8 h,ax_i01 col);
 void ax_hrec1(ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 w,ax_i8 h,ax_i8  col);
 void ax_hrec2(ax_i02 vaddr,ax_i8 scrnw,ax_i01 px,ax_i8 w,ax_i8 h,ax_i01 col);
 
-#if defined(__cplusplus)
-}
-#endif
+__ax_endcdecl
 
 #endif

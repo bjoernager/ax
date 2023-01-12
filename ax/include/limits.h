@@ -30,12 +30,16 @@
 #define ULLONG_WIDTH (0x40)
 #define LLONG_WIDTH  ULLONG_WIDTH
 
+#if defined(__BITINT_MAXWIDTH__)
+#define BITINT_MAXWIDTH (__BITINT_MAXWIDTH__)
+#else
 #define BITINT_MAXWIDTH ULLONG_WIDTH
+#endif
 
 #define MB_LEN_MAX (0x4)
 
 #define UCHAR_MAX ((unsigned int)+ax_maxval_uc)
-#define CHAR_MAX  CHAR_MAX
+#define CHAR_MAX  UCHAR_MAX
 
 #define USHRT_MAX ((unsigned int)+ax_maxval_us)
 

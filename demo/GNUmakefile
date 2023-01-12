@@ -19,6 +19,7 @@ CFLAGS := \
 	-Wall           \
 	-Wextra         \
 	-Wpedantic      \
+	-Wno-attributes \
 	-ffreestanding  \
 	-fshort-enums   \
 	-mcpu=arm7tdmi  \

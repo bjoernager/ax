@@ -32,7 +32,7 @@ int strcmp( char const * s1,char const * s2);
 int strncmp(char const * s1,char const * s2);
 /* strxfrm not required. */
 
-/* We're missing the generic variations of the following functions: */
+/* We're missing the generic variants of the following functions: */
 void * memchr( void const *    s, int             c, size_t n);
 char * strchr( char const *    s, int             c);
 size_t strcspn(char const *    s1,char const *    s2);
